@@ -12,11 +12,12 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 
 // jacob - tymczasowe NASTAWY PID
 // KP
-// 0.07 - ok, TESTING
+// 0.06 - TESTING
+// 0.07 - ok, Jest super ale troszke oscyluje
 // 0.08 - ok, JEST SUPER ale troszke oscyluje
 // 0.12 - ok, troche za bardzo oscyluje
 // 0.20 - testing, troche oscyluje na zakretach
-float Kp = 0.07;
+float Kp = 0.06;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
@@ -86,9 +87,10 @@ void loop() {
   // 0.5 = średnie hamowanie
   // 1.0 = ostre hamowanie przed każdym łukiem
 
-  // 0.3 - testing
+  // 0.3 - ok ale troche przesadza
+  // 0.4 - to powinna byc idealna, testuje
   // 0.5 - jest super
-  float wspolczynnik = 0.3; 
+  float wspolczynnik = 0.4; 
   
   // Odejmujemy część korekty od prędkości maksymalnej.
   // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
