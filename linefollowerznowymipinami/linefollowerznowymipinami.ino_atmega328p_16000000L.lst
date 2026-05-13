@@ -1001,7 +1001,7 @@ void delay(unsigned long ms)
  43a:	f1 04       	cpc	r15, r1
  43c:	29 f7       	brne	.-54     	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:139
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:142
 
 // new
   // Zapisujemy kierunek TYLKO jeśli linia jest wyraźnie po jednej ze stron.
@@ -1011,7 +1011,7 @@ oblicz_pozycje():
  43e:	22 24       	eor	r2, r2
  440:	2a 94       	dec	r2
  442:	32 2c       	mov	r3, r2
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:111
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:114
 }
 
 int oblicz_pozycje() {
@@ -1033,7 +1033,7 @@ int oblicz_pozycje() {
  45c:	4f 5f       	subi	r20, 0xFF	; 255
  45e:	5f 4f       	sbci	r21, 0xFF	; 255
 main():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:110
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:113
   move(moc_lewy, moc_prawy);
 }
 
@@ -1042,7 +1042,7 @@ int oblicz_pozycje() {
   int aktywnych = 0;
  460:	30 e0       	ldi	r19, 0x00	; 0
  462:	20 e0       	ldi	r18, 0x00	; 0
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:109
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:112
 
   move(moc_lewy, moc_prawy);
 }
@@ -1053,7 +1053,7 @@ int oblicz_pozycje() {
  466:	d1 2c       	mov	r13, r1
  468:	76 01       	movw	r14, r12
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:114
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:117
   int aktywnych = 0;
   int wagi[] = {-2000, -1000, 0, 1000, 2000};
   
@@ -1111,12 +1111,12 @@ int analogRead(uint8_t pin)
  496:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__DATA_REGION_ORIGIN__+0x18>
  49a:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__DATA_REGION_ORIGIN__+0x19>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:115
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:118
     if (odczyt < PROG_LINII) {
  49e:	80 32       	cpi	r24, 0x20	; 32
  4a0:	93 40       	sbci	r25, 0x03	; 3
  4a2:	6c f4       	brge	.+26     	; 0x4be <__LOCK_REGION_LENGTH__+0xbe>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:116
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:119
       suma_wag += wagi[i];
  4a4:	da 01       	movw	r26, r20
  4a6:	8d 91       	ld	r24, X+
@@ -1129,13 +1129,13 @@ oblicz_pozycje():
  4b4:	d9 1e       	adc	r13, r25
  4b6:	ea 1e       	adc	r14, r26
  4b8:	fb 1e       	adc	r15, r27
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:117
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:120
       aktywnych++;
  4ba:	2f 5f       	subi	r18, 0xFF	; 255
  4bc:	3f 4f       	sbci	r19, 0xFF	; 255
  4be:	4e 5f       	subi	r20, 0xFE	; 254
  4c0:	5f 4f       	sbci	r21, 0xFF	; 255
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:113
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:116
 int oblicz_pozycje() {
   long suma_wag = 0;
   int aktywnych = 0;
@@ -1147,7 +1147,7 @@ int oblicz_pozycje() {
  4c6:	8e 17       	cp	r24, r30
  4c8:	9f 07       	cpc	r25, r31
  4ca:	79 f6       	brne	.-98     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:122
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:125
       aktywnych++;
     }
   }
@@ -1157,19 +1157,19 @@ int oblicz_pozycje() {
  4cc:	21 15       	cp	r18, r1
  4ce:	31 05       	cpc	r19, r1
  4d0:	59 f4       	brne	.+22     	; 0x4e8 <__LOCK_REGION_LENGTH__+0xe8>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:125
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:128
     // Zamiast zwracać 10000, dajemy maksymalny możliwy błąd z "plusem" lub "minusem",
     // aby PID sam agresywnie, ale płynnie skręcił i użył dynamicznego hamowania.
     if (ostatni_kierunek == 1) return 3000; 
  4d2:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <__data_end>
  4d6:	90 91 15 01 	lds	r25, 0x0115	; 0x800115 <__data_end+0x1>
 main():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:126
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:129
     else return -3000;
  4da:	28 e4       	ldi	r18, 0x48	; 72
  4dc:	34 ef       	ldi	r19, 0xF4	; 244
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:125
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:128
 
   // if (aktywnych == 0) return 10000;
   if (aktywnych == 0) {
@@ -1183,7 +1183,7 @@ main():
  4e4:	3b e0       	ldi	r19, 0x0B	; 11
  4e6:	11 c0       	rjmp	.+34     	; 0x50a <__LOCK_REGION_LENGTH__+0x10a>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:129
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:132
     else return -3000;
   }
 
@@ -1195,7 +1195,7 @@ oblicz_pozycje():
  4f0:	c7 01       	movw	r24, r14
  4f2:	b6 01       	movw	r22, r12
  4f4:	0e 94 97 05 	call	0xb2e	; 0xb2e <__divmodsi4>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:138
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:141
   // else if (pozycja > 0) ostatni_kierunek = 1;
 
 // new
@@ -1207,7 +1207,7 @@ oblicz_pozycje():
  4fc:	39 07       	cpc	r19, r25
  4fe:	0c f0       	brlt	.+2      	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
  500:	16 c1       	rjmp	.+556    	; 0x72e <__LOCK_REGION_LENGTH__+0x32e>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:139
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:142
       ostatni_kierunek = -1; // Linia jest zdecydowanie po lewej
  502:	30 92 15 01 	sts	0x0115, r3	; 0x800115 <__data_end+0x1>
  506:	20 92 14 01 	sts	0x0114, r2	; 0x800114 <__data_end>
@@ -1387,9 +1387,9 @@ loop():
  63e:	50 92 1f 01 	sts	0x011F, r5	; 0x80011f <poprzedni_czas+0x1>
  642:	60 92 20 01 	sts	0x0120, r6	; 0x800120 <poprzedni_czas+0x2>
  646:	70 92 21 01 	sts	0x0121, r7	; 0x800121 <poprzedni_czas+0x3>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:92
-  // 1.0 = ostre hamowanie przed każdym łukiem
-  float wspolczynnik = 0.5; 
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:95
+  // 0.5 - jest super
+  float wspolczynnik = 0.3; 
   
   // Odejmujemy część korekty od prędkości maksymalnej.
   // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
@@ -1408,10 +1408,10 @@ loop():
  664:	88 0b       	sbc	r24, r24
  666:	99 0b       	sbc	r25, r25
  668:	0e 94 75 04 	call	0x8ea	; 0x8ea <__floatsisf>
- 66c:	20 e0       	ldi	r18, 0x00	; 0
- 66e:	30 e0       	ldi	r19, 0x00	; 0
- 670:	40 e0       	ldi	r20, 0x00	; 0
- 672:	5f e3       	ldi	r21, 0x3F	; 63
+ 66c:	2a e9       	ldi	r18, 0x9A	; 154
+ 66e:	39 e9       	ldi	r19, 0x99	; 153
+ 670:	49 e9       	ldi	r20, 0x99	; 153
+ 672:	5e e3       	ldi	r21, 0x3E	; 62
  674:	0e 94 2a 05 	call	0xa54	; 0xa54 <__mulsf3>
  678:	9b 01       	movw	r18, r22
  67a:	ac 01       	movw	r20, r24
@@ -1426,7 +1426,7 @@ loop():
  690:	14 f4       	brge	.+4      	; 0x696 <__LOCK_REGION_LENGTH__+0x296>
  692:	60 e5       	ldi	r22, 0x50	; 80
  694:	70 e0       	ldi	r23, 0x00	; 0
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:102
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:105
   if (aktualne_v < 80) {
       aktualne_v = 80;
   }
@@ -1436,7 +1436,7 @@ loop():
  696:	c7 01       	movw	r24, r14
  698:	86 0f       	add	r24, r22
  69a:	97 1f       	adc	r25, r23
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:103
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:106
   int moc_prawy = aktualne_v - korekta;
  69c:	8b 01       	movw	r16, r22
  69e:	0e 19       	sub	r16, r14
@@ -1476,7 +1476,7 @@ loop():
  6e2:	ff 24       	eor	r15, r15
  6e4:	fa 94       	dec	r15
 move():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:157
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:160
 
 void move(int ml, int mp) {
   ml = constrain(ml, -255, 255);
@@ -1485,7 +1485,7 @@ void move(int ml, int mp) {
   if (ml >= 0) {
  6e6:	97 fd       	sbrc	r25, 7
  6e8:	3e c0       	rjmp	.+124    	; 0x766 <__LOCK_REGION_LENGTH__+0x366>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:158
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:161
     digitalWrite(m_lewy_A, HIGH); digitalWrite(m_lewy_B, LOW);
  6ea:	61 e0       	ldi	r22, 0x01	; 1
  6ec:	82 e0       	ldi	r24, 0x02	; 2
@@ -1493,7 +1493,7 @@ void move(int ml, int mp) {
  6f2:	60 e0       	ldi	r22, 0x00	; 0
  6f4:	83 e0       	ldi	r24, 0x03	; 3
  6f6:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:164
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:167
   } else {
     digitalWrite(m_lewy_A, LOW); digitalWrite(m_lewy_B, HIGH);
     ml = -ml;
@@ -1502,7 +1502,7 @@ void move(int ml, int mp) {
   if (mp >= 0) {
  6fa:	17 fd       	sbrc	r17, 7
  6fc:	40 c0       	rjmp	.+128    	; 0x77e <__LOCK_REGION_LENGTH__+0x37e>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:165
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:168
     digitalWrite(m_prawy_A, HIGH); digitalWrite(m_prawy_B, LOW);
  6fe:	61 e0       	ldi	r22, 0x01	; 1
  700:	88 e0       	ldi	r24, 0x08	; 8
@@ -1510,7 +1510,7 @@ void move(int ml, int mp) {
  706:	60 e0       	ldi	r22, 0x00	; 0
  708:	89 e0       	ldi	r24, 0x09	; 9
  70a:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:171
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:174
   } else {
     digitalWrite(m_prawy_A, LOW); digitalWrite(m_prawy_B, HIGH);
     mp = -mp;
@@ -1520,7 +1520,7 @@ void move(int ml, int mp) {
  70e:	b6 01       	movw	r22, r12
  710:	86 e0       	ldi	r24, 0x06	; 6
  712:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <analogWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:172
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:175
   analogWrite(en_prawy, mp);
  716:	b7 01       	movw	r22, r14
  718:	85 e0       	ldi	r24, 0x05	; 5
@@ -1541,7 +1541,7 @@ main():
  728:	0e 94 00 00 	call	0	; 0x0 <__vectors>
  72c:	8b ce       	rjmp	.-746    	; 0x444 <__LOCK_REGION_LENGTH__+0x44>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:141
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:144
   // Zapisujemy kierunek TYLKO jeśli linia jest wyraźnie po jednej ze stron.
   // Ignorujemy małe wahania wokół zera (środka).
   if (pozycja < -500) {
@@ -1553,7 +1553,7 @@ oblicz_pozycje():
  732:	3a 07       	cpc	r19, r26
  734:	0c f4       	brge	.+2      	; 0x738 <__LOCK_REGION_LENGTH__+0x338>
  736:	e9 ce       	rjmp	.-558    	; 0x50a <__LOCK_REGION_LENGTH__+0x10a>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:142
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:145
       ostatni_kierunek = 1;  // Linia jest zdecydowanie po prawej
  738:	41 e0       	ldi	r20, 0x01	; 1
  73a:	50 e0       	ldi	r21, 0x00	; 0
@@ -1579,7 +1579,7 @@ main():
  762:	f6 2e       	mov	r15, r22
  764:	22 cf       	rjmp	.-444    	; 0x5aa <__LOCK_REGION_LENGTH__+0x1aa>
 move():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:160
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:163
   mp = constrain(mp, -255, 255);
 
   if (ml >= 0) {
@@ -1592,13 +1592,13 @@ move():
  76e:	61 e0       	ldi	r22, 0x01	; 1
  770:	83 e0       	ldi	r24, 0x03	; 3
  772:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:161
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:164
     ml = -ml;
  776:	d1 94       	neg	r13
  778:	c1 94       	neg	r12
  77a:	d1 08       	sbc	r13, r1
  77c:	be cf       	rjmp	.-132    	; 0x6fa <__LOCK_REGION_LENGTH__+0x2fa>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:167
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:170
   }
 
   if (mp >= 0) {
@@ -1611,7 +1611,7 @@ move():
  786:	61 e0       	ldi	r22, 0x01	; 1
  788:	89 e0       	ldi	r24, 0x09	; 9
  78a:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:168
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:171
     mp = -mp;
  78e:	f1 94       	neg	r15
  790:	e1 94       	neg	r14

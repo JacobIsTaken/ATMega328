@@ -85,7 +85,10 @@ void loop() {
   // 0.0 = wyłączone, robot jedzie ciągle 250
   // 0.5 = średnie hamowanie
   // 1.0 = ostre hamowanie przed każdym łukiem
-  float wspolczynnik = 0.5; 
+
+  // 0.3 - testing
+  // 0.5 - jest super
+  float wspolczynnik = 0.3; 
   
   // Odejmujemy część korekty od prędkości maksymalnej.
   // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
