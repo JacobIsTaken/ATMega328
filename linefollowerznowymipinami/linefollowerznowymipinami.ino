@@ -13,9 +13,10 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 // jacob - tymczasowe NASTAWY PID
 // KP
 // 0.05 - ok
-// 0.12 - ok, podobno dobre
+// 0.08 - ok, TEST
+// 0.12 - ok, troche za bardzo oscyluje
 // 0.20 - testing, troche oscyluje na zakretach
-float Kp = 0.10;
+float Kp = 0.08;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
