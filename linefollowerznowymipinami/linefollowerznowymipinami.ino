@@ -13,6 +13,9 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 // jacob - tymczasowe NASTAWY PID
 float Kp = 0.05;
 float Ki = 0.0;
+// Kd
+// 0.5 - ok ale troche przestrzela
+// 1.0 - testing
 float Kd = 0.5;
 
 // --- ZMIENNE POMOCNICZE ---
@@ -24,7 +27,7 @@ float calka = 0;
 // 70 - ok
 // 150 - super
 // 200 - super
-// 250 - testing
+// 250 - super
 int V_BAZA = 250;
 int ostatni_kierunek = 0;
 
@@ -34,7 +37,7 @@ int korekta = 0;
 
 // jacob - wydaje mi sie ze taki jest odpowieni w razie czego zmniejszyc do 800
 // 850 - działa ok
-// 800 - testuje
+// 800 - super
 const int PROG_LINII = 800; // Czarna linia = niski odczyt (<400), białe tło = wysoki (>400)
 
 void setup() {
