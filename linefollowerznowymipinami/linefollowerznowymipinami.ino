@@ -11,7 +11,7 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 // float Kd = 0.8;
 
 // jacob - tymczasowe NASTAWY PID
-float Kp = 0.08;
+float Kp = 0.12;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
@@ -23,11 +23,10 @@ int blad = 0;
 int poprzedni_blad = 0;
 float calka = 0;
 
-// jacob - do testow zmniejszam do 70 ( domyslenie 180 , zasieg od 0 do 255)
-// 70 - ok
+// V_BAZA ( domyslenie 180 , zasieg od 0 do 255)
 // 150 - super
-// 200 - super
-// 250 - super, zostawiam
+// 200 - super, próbuje ponownie aby miał zapas mocy na przyspieszanie
+// 250 - super
 int V_BAZA = 250;
 int ostatni_kierunek = 0;
 
@@ -74,16 +73,28 @@ void loop() {
       poprzedni_czas = aktualny_czas; // Zapisujemy czas do następnego sprawdzenia
   }
   // test end
+
+  // === NOWY MODUŁ DYNAMICZNEJ PRĘDKOŚCI ===
+  // Twój współczynnik hamowania. 
+  // 0.0 = wyłączone, robot jedzie ciągle 250
+  // 0.5 = średnie hamowanie
+  // 1.0 = ostre hamowanie przed każdym łukiem
+  float wspolczynnik = 0.5; 
   
-  // calka = calka + blad;
-  // calka = constrain(calka, -3000, 3000);
+  // Odejmujemy część korekty od prędkości maksymalnej.
+  // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
+  int aktualne_v = V_BAZA - (abs(korekta) * wspolczynnik);
 
-  // int rozniczka = blad - poprzedni_blad;
-  // int korekta = Kp * blad + Ki * calka + Kd * rozniczka;
-  // poprzedni_blad = blad;
+  // Zabezpieczenie krytyczne! 
+  // Nie pozwalamy, aby na ekstremalnie ostrym zakręcie baza spadła poniżej pewnego progu (np. 80), 
+  // bo robot całkowicie by się zatrzymał.
+  if (aktualne_v < 80) {
+      aktualne_v = 80;
+  }
 
-  int moc_lewy  = V_BAZA + korekta;
-  int moc_prawy = V_BAZA - korekta;
+  // Obliczamy ostateczną moc na koła używając nowej, bezpiecznej bazy
+  int moc_lewy  = aktualne_v + korekta;
+  int moc_prawy = aktualne_v - korekta;
 
   move(moc_lewy, moc_prawy);
 }
