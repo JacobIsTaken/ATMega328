@@ -23,9 +23,14 @@ float calka = 0;
 // jacob - do testow zmniejszam do 70 ( domyslenie 180 , zasieg od 0 do 255)
 // 70 - ok
 // 150 - super
-// 200 - testing
-int V_BAZA = 200;
+// 200 - super
+// 250 - testing
+int V_BAZA = 250;
 int ostatni_kierunek = 0;
+
+// zmienne pomocnicz do naprawy hamowania
+unsigned long poprzedni_czas = 0; 
+int korekta = 0;                  
 
 // jacob - wydaje mi sie ze taki jest odpowieni w razie czego zmniejszyc do 800
 // 850 - działa ok
@@ -49,12 +54,30 @@ void loop() {
   }
 
   blad = pozycja;
-  calka = calka + blad;
-  calka = constrain(calka, -3000, 3000);
+  // test start
+  // Pobieramy aktualny czas w milisekundach
+  unsigned long aktualny_czas = millis();
 
-  int rozniczka = blad - poprzedni_blad;
-  int korekta = Kp * blad + Ki * calka + Kd * rozniczka;
-  poprzedni_blad = blad;
+  // Liczymy PID tylko jeśli minęło 5 milisekund (czyli 200 razy na sekundę)
+  if (aktualny_czas - poprzedni_czas >= 5) {
+      calka = calka + blad;
+      calka = constrain(calka, -3000, 3000);
+
+      int rozniczka = blad - poprzedni_blad;
+      
+      korekta = (Kp * blad) + (Ki * calka) + (Kd * rozniczka);
+      
+      poprzedni_blad = blad;
+      poprzedni_czas = aktualny_czas; // Zapisujemy czas do następnego sprawdzenia
+  }
+  // test end
+  
+  // calka = calka + blad;
+  // calka = constrain(calka, -3000, 3000);
+
+  // int rozniczka = blad - poprzedni_blad;
+  // int korekta = Kp * blad + Ki * calka + Kd * rozniczka;
+  // poprzedni_blad = blad;
 
   int moc_lewy  = V_BAZA + korekta;
   int moc_prawy = V_BAZA - korekta;
