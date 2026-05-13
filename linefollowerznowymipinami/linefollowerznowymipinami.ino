@@ -19,12 +19,17 @@ float Kd = 0.5;
 int blad = 0;
 int poprzedni_blad = 0;
 float calka = 0;
+
 // jacob - do testow zmniejszam do 70 ( domyslenie 180 , zasieg od 0 do 255)
-int V_BAZA = 70;
+// 70 - ok
+// 150 - testing
+int V_BAZA = 150;
 int ostatni_kierunek = 0;
 
 // jacob - wydaje mi sie ze taki jest odpowieni w razie czego zmniejszyc do 800
-const int PROG_LINII = 850; // Czarna linia = niski odczyt (<400), białe tło = wysoki (>400)
+// 850 - działa ok
+// 800 - testuje
+const int PROG_LINII = 800; // Czarna linia = niski odczyt (<400), białe tło = wysoki (>400)
 
 void setup() {
   pinMode(m_prawy_A, OUTPUT); pinMode(m_prawy_B, OUTPUT);
