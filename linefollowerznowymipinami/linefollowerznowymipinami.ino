@@ -12,11 +12,11 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 
 // jacob - tymczasowe NASTAWY PID
 // KP
-// 0.05 - ok
-// 0.08 - ok, TEST
+// 0.07 - ok, TESTING
+// 0.08 - ok, JEST SUPER ale troszke oscyluje
 // 0.12 - ok, troche za bardzo oscyluje
 // 0.20 - testing, troche oscyluje na zakretach
-float Kp = 0.08;
+float Kp = 0.07;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
@@ -128,8 +128,19 @@ int oblicz_pozycje() {
 
   int pozycja = suma_wag / aktywnych;
 
-  if (pozycja < 0) ostatni_kierunek = -1;
-  else if (pozycja > 0) ostatni_kierunek = 1;
+// old
+  // if (pozycja < 0) ostatni_kierunek = -1;
+  // else if (pozycja > 0) ostatni_kierunek = 1;
+
+// new
+  // Zapisujemy kierunek TYLKO jeśli linia jest wyraźnie po jednej ze stron.
+  // Ignorujemy małe wahania wokół zera (środka).
+  if (pozycja < -500) {
+      ostatni_kierunek = -1; // Linia jest zdecydowanie po lewej
+  } 
+  else if (pozycja > 500) {
+      ostatni_kierunek = 1;  // Linia jest zdecydowanie po prawej
+  }
 
   return pozycja;
 }
