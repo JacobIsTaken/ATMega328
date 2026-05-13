@@ -22,8 +22,9 @@ float calka = 0;
 
 // jacob - do testow zmniejszam do 70 ( domyslenie 180 , zasieg od 0 do 255)
 // 70 - ok
-// 150 - testing
-int V_BAZA = 150;
+// 150 - super
+// 200 - testing
+int V_BAZA = 200;
 int ostatni_kierunek = 0;
 
 // jacob - wydaje mi sie ze taki jest odpowieni w razie czego zmniejszyc do 800
