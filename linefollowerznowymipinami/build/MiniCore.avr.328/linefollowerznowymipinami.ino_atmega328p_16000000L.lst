@@ -75,7 +75,7 @@ __do_copy_data():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
   d2:	b1 e0       	ldi	r27, 0x01	; 1
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
-  d4:	ee ec       	ldi	r30, 0xCE	; 206
+  d4:	ec eb       	ldi	r30, 0xBC	; 188
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
   d6:	fb e0       	ldi	r31, 0x0B	; 11
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
@@ -115,7 +115,7 @@ __do_clear_bss():
   f2:	e1 f7       	brne	.-8      	; 0xec <.do_clear_bss_loop>
 .do_clear_bss_start():
   f4:	0e 94 12 02 	call	0x424	; 0x424 <main>
-  f8:	0c 94 e5 05 	jmp	0xbca	; 0xbca <_exit>
+  f8:	0c 94 dc 05 	jmp	0xbb8	; 0xbb8 <_exit>
 
 000000fc <__bad_interrupt>:
 __vector_22():
@@ -688,7 +688,7 @@ micros():
 
 000002d8 <move(int, int)>:
 _Z4moveii():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:130
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:134
 void szukaj_linii() {
   if (ostatni_kierunek == -1) move(-80, 80); 
   else move(80, -80);
@@ -729,14 +729,14 @@ void move(int ml, int mp) {
  316:	14 f4       	brge	.+4      	; 0x31c <move(int, int)+0x44>
  318:	c1 e0       	ldi	r28, 0x01	; 1
  31a:	df ef       	ldi	r29, 0xFF	; 255
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:134
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:138
   ml = constrain(ml, -255, 255);
   mp = constrain(mp, -255, 255);
 
   if (ml >= 0) {
  31c:	97 fd       	sbrc	r25, 7
  31e:	20 c0       	rjmp	.+64     	; 0x360 <move(int, int)+0x88>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:135
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:139
     digitalWrite(m_lewy_A, HIGH); digitalWrite(m_lewy_B, LOW);
  320:	61 e0       	ldi	r22, 0x01	; 1
  322:	82 e0       	ldi	r24, 0x02	; 2
@@ -744,7 +744,7 @@ void move(int ml, int mp) {
  328:	60 e0       	ldi	r22, 0x00	; 0
  32a:	83 e0       	ldi	r24, 0x03	; 3
  32c:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:141
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:145
   } else {
     digitalWrite(m_lewy_A, LOW); digitalWrite(m_lewy_B, HIGH);
     ml = -ml;
@@ -753,7 +753,7 @@ void move(int ml, int mp) {
   if (mp >= 0) {
  330:	f7 fc       	sbrc	r15, 7
  332:	22 c0       	rjmp	.+68     	; 0x378 <move(int, int)+0xa0>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:142
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:146
     digitalWrite(m_prawy_A, HIGH); digitalWrite(m_prawy_B, LOW);
  334:	61 e0       	ldi	r22, 0x01	; 1
  336:	88 e0       	ldi	r24, 0x08	; 8
@@ -761,7 +761,7 @@ void move(int ml, int mp) {
  33c:	60 e0       	ldi	r22, 0x00	; 0
  33e:	89 e0       	ldi	r24, 0x09	; 9
  340:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:148
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:152
   } else {
     digitalWrite(m_prawy_A, LOW); digitalWrite(m_prawy_B, HIGH);
     mp = -mp;
@@ -771,11 +771,11 @@ void move(int ml, int mp) {
  344:	b8 01       	movw	r22, r16
  346:	86 e0       	ldi	r24, 0x06	; 6
  348:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <analogWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:149
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:153
   analogWrite(en_prawy, mp);
  34c:	be 01       	movw	r22, r28
  34e:	85 e0       	ldi	r24, 0x05	; 5
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:150
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:154
 }
  350:	df 91       	pop	r29
  352:	cf 91       	pop	r28
@@ -783,7 +783,7 @@ void move(int ml, int mp) {
  356:	0f 91       	pop	r16
  358:	ff 90       	pop	r15
  35a:	ef 90       	pop	r14
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:149
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:153
     digitalWrite(m_prawy_A, LOW); digitalWrite(m_prawy_B, HIGH);
     mp = -mp;
   }
@@ -791,7 +791,7 @@ void move(int ml, int mp) {
   analogWrite(en_lewy, ml);
   analogWrite(en_prawy, mp);
  35c:	0c 94 eb 00 	jmp	0x1d6	; 0x1d6 <analogWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:137
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:141
   mp = constrain(mp, -255, 255);
 
   if (ml >= 0) {
@@ -804,13 +804,13 @@ void move(int ml, int mp) {
  368:	61 e0       	ldi	r22, 0x01	; 1
  36a:	83 e0       	ldi	r24, 0x03	; 3
  36c:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:138
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:142
     ml = -ml;
  370:	11 95       	neg	r17
  372:	01 95       	neg	r16
  374:	11 09       	sbc	r17, r1
  376:	dc cf       	rjmp	.-72     	; 0x330 <move(int, int)+0x58>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:144
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:148
   }
 
   if (mp >= 0) {
@@ -823,7 +823,7 @@ void move(int ml, int mp) {
  380:	61 e0       	ldi	r22, 0x01	; 1
  382:	89 e0       	ldi	r24, 0x09	; 9
  384:	0e 94 9f 00 	call	0x13e	; 0x13e <digitalWrite>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:145
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:149
     mp = -mp;
  388:	d1 95       	neg	r29
  38a:	c1 95       	neg	r28
@@ -954,7 +954,7 @@ int main(void)
  426:	df 93       	push	r29
  428:	cd b7       	in	r28, 0x3d	; 61
  42a:	de b7       	in	r29, 0x3e	; 62
- 42c:	2e 97       	sbiw	r28, 0x0e	; 14
+ 42c:	2a 97       	sbiw	r28, 0x0a	; 10
  42e:	0f b6       	in	r0, 0x3f	; 63
  430:	f8 94       	cli
  432:	de bf       	out	0x3e, r29	; 62
@@ -1062,7 +1062,7 @@ void init()
   UCSR0B = 0;
  484:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__DATA_REGION_ORIGIN__+0x61>
 setup():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:43
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:47
 // 850 - działa ok
 // 800 - super
 const int PROG_LINII = 800; // Czarna linia = niski odczyt (<400), białe tło = wysoki (>400)
@@ -1073,13 +1073,13 @@ void setup() {
  48a:	0e 94 80 00 	call	0x100	; 0x100 <pinMode.constprop.1>
  48e:	89 e0       	ldi	r24, 0x09	; 9
  490:	0e 94 80 00 	call	0x100	; 0x100 <pinMode.constprop.1>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:44
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:48
   pinMode(m_lewy_A, OUTPUT); pinMode(m_lewy_B, OUTPUT);
  494:	82 e0       	ldi	r24, 0x02	; 2
  496:	0e 94 80 00 	call	0x100	; 0x100 <pinMode.constprop.1>
  49a:	83 e0       	ldi	r24, 0x03	; 3
  49c:	0e 94 80 00 	call	0x100	; 0x100 <pinMode.constprop.1>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:45
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:49
   pinMode(en_prawy, OUTPUT); pinMode(en_lewy, OUTPUT);
  4a0:	85 e0       	ldi	r24, 0x05	; 5
  4a2:	0e 94 80 00 	call	0x100	; 0x100 <pinMode.constprop.1>
@@ -1145,7 +1145,7 @@ void delay(unsigned long ms)
  4f2:	f1 04       	cpc	r15, r1
  4f4:	29 f7       	brne	.-54     	; 0x4c0 <main+0x9c>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:119
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:123
 
   if (aktywnych == 0) return 10000;
 
@@ -1155,7 +1155,7 @@ oblicz_pozycje():
  4f6:	22 24       	eor	r2, r2
  4f8:	2a 94       	dec	r2
  4fa:	32 2c       	mov	r3, r2
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:105
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:109
 }
 
 int oblicz_pozycje() {
@@ -1177,7 +1177,7 @@ int oblicz_pozycje() {
  514:	4f 5f       	subi	r20, 0xFF	; 255
  516:	5f 4f       	sbci	r21, 0xFF	; 255
 main():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:104
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:108
   move(moc_lewy, moc_prawy);
 }
 
@@ -1186,7 +1186,7 @@ int oblicz_pozycje() {
   int aktywnych = 0;
  518:	30 e0       	ldi	r19, 0x00	; 0
  51a:	20 e0       	ldi	r18, 0x00	; 0
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:103
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:107
 
   move(moc_lewy, moc_prawy);
 }
@@ -1197,7 +1197,7 @@ int oblicz_pozycje() {
  51e:	d1 2c       	mov	r13, r1
  520:	76 01       	movw	r14, r12
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:108
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:112
   int aktywnych = 0;
   int wagi[] = {-2000, -1000, 0, 1000, 2000};
   
@@ -1255,12 +1255,12 @@ int analogRead(uint8_t pin)
  54e:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__DATA_REGION_ORIGIN__+0x18>
  552:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__DATA_REGION_ORIGIN__+0x19>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:109
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:113
     if (odczyt < PROG_LINII) {
  556:	80 32       	cpi	r24, 0x20	; 32
  558:	93 40       	sbci	r25, 0x03	; 3
  55a:	6c f4       	brge	.+26     	; 0x576 <main+0x152>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:110
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:114
       suma_wag += wagi[i];
  55c:	da 01       	movw	r26, r20
  55e:	8d 91       	ld	r24, X+
@@ -1273,13 +1273,13 @@ oblicz_pozycje():
  56c:	d9 1e       	adc	r13, r25
  56e:	ea 1e       	adc	r14, r26
  570:	fb 1e       	adc	r15, r27
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:111
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:115
       aktywnych++;
  572:	2f 5f       	subi	r18, 0xFF	; 255
  574:	3f 4f       	sbci	r19, 0xFF	; 255
  576:	4e 5f       	subi	r20, 0xFE	; 254
  578:	5f 4f       	sbci	r21, 0xFF	; 255
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:107
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:111
 int oblicz_pozycje() {
   long suma_wag = 0;
   int aktywnych = 0;
@@ -1291,7 +1291,7 @@ int oblicz_pozycje() {
  57e:	6e 17       	cp	r22, r30
  580:	7f 07       	cpc	r23, r31
  582:	79 f6       	brne	.-98     	; 0x522 <main+0xfe>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:115
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:119
       suma_wag += wagi[i];
       aktywnych++;
     }
@@ -1301,8 +1301,8 @@ int oblicz_pozycje() {
  584:	21 15       	cp	r18, r1
  586:	31 05       	cpc	r19, r1
  588:	09 f4       	brne	.+2      	; 0x58c <main+0x168>
- 58a:	e9 c0       	rjmp	.+466    	; 0x75e <main+0x33a>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:117
+ 58a:	e0 c0       	rjmp	.+448    	; 0x74c <main+0x328>
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:121
 
   int pozycja = suma_wag / aktywnych;
  58c:	03 2e       	mov	r0, r19
@@ -1311,17 +1311,17 @@ int oblicz_pozycje() {
  592:	55 0b       	sbc	r21, r21
  594:	c7 01       	movw	r24, r14
  596:	b6 01       	movw	r22, r12
- 598:	0e 94 a4 05 	call	0xb48	; 0xb48 <__divmodsi4>
+ 598:	0e 94 9b 05 	call	0xb36	; 0xb36 <__divmodsi4>
  59c:	c9 01       	movw	r24, r18
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:119
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:123
 
   if (pozycja < 0) ostatni_kierunek = -1;
  59e:	37 ff       	sbrs	r19, 7
- 5a0:	d0 c0       	rjmp	.+416    	; 0x742 <main+0x31e>
+ 5a0:	c7 c0       	rjmp	.+398    	; 0x730 <main+0x30c>
  5a2:	30 92 15 01 	sts	0x0115, r3	; 0x800115 <__data_end+0x1>
  5a6:	20 92 14 01 	sts	0x0114, r2	; 0x800114 <__data_end>
 loop():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:58
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:62
   if (pozycja == 10000) {
     szukaj_linii();
     return;
@@ -1347,15 +1347,15 @@ unsigned long millis()
  5b4:	f8 94       	cli
 /home/blobinnit/.arduino15/packages/MiniCore/hardware/avr/3.1.2/cores/MCUdude_corefiles/wiring.c:223
   m = timer0_millis;
- 5b6:	40 90 25 01 	lds	r4, 0x0125	; 0x800125 <timer0_millis>
- 5ba:	50 90 26 01 	lds	r5, 0x0126	; 0x800126 <timer0_millis+0x1>
- 5be:	60 90 27 01 	lds	r6, 0x0127	; 0x800127 <timer0_millis+0x2>
- 5c2:	70 90 28 01 	lds	r7, 0x0128	; 0x800128 <timer0_millis+0x3>
+ 5b6:	80 90 25 01 	lds	r8, 0x0125	; 0x800125 <timer0_millis>
+ 5ba:	90 90 26 01 	lds	r9, 0x0126	; 0x800126 <timer0_millis+0x1>
+ 5be:	a0 90 27 01 	lds	r10, 0x0127	; 0x800127 <timer0_millis+0x2>
+ 5c2:	b0 90 28 01 	lds	r11, 0x0128	; 0x800128 <timer0_millis+0x3>
 /home/blobinnit/.arduino15/packages/MiniCore/hardware/avr/3.1.2/cores/MCUdude_corefiles/wiring.c:224
   SREG = oldSREG;
  5c6:	8f bf       	out	0x3f, r24	; 63
 loop():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:64
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:68
   // test start
   // Pobieramy aktualny czas w milisekundach
   unsigned long aktualny_czas = millis();
@@ -1366,8 +1366,8 @@ loop():
  5cc:	90 91 1f 01 	lds	r25, 0x011F	; 0x80011f <poprzedni_czas+0x1>
  5d0:	a0 91 20 01 	lds	r26, 0x0120	; 0x800120 <poprzedni_czas+0x2>
  5d4:	b0 91 21 01 	lds	r27, 0x0121	; 0x800121 <poprzedni_czas+0x3>
- 5d8:	b3 01       	movw	r22, r6
- 5da:	a2 01       	movw	r20, r4
+ 5d8:	b5 01       	movw	r22, r10
+ 5da:	a4 01       	movw	r20, r8
  5dc:	48 1b       	sub	r20, r24
  5de:	59 0b       	sbc	r21, r25
  5e0:	6a 0b       	sbc	r22, r26
@@ -1378,8 +1378,8 @@ loop():
  5ea:	a1 05       	cpc	r26, r1
  5ec:	b1 05       	cpc	r27, r1
  5ee:	08 f4       	brcc	.+2      	; 0x5f2 <main+0x1ce>
- 5f0:	7b c0       	rjmp	.+246    	; 0x6e8 <main+0x2c4>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:65
+ 5f0:	72 c0       	rjmp	.+228    	; 0x6d6 <main+0x2b2>
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:69
       calka = calka + blad;
  5f2:	00 91 22 01 	lds	r16, 0x0122	; 0x800122 <blad>
  5f6:	10 91 23 01 	lds	r17, 0x0123	; 0x800123 <blad+0x1>
@@ -1388,14 +1388,14 @@ loop():
  5fe:	00 0c       	add	r0, r0
  600:	88 0b       	sbc	r24, r24
  602:	99 0b       	sbc	r25, r25
- 604:	0e 94 82 04 	call	0x904	; 0x904 <__floatsisf>
- 608:	4b 01       	movw	r8, r22
- 60a:	5c 01       	movw	r10, r24
+ 604:	0e 94 79 04 	call	0x8f2	; 0x8f2 <__floatsisf>
+ 608:	2b 01       	movw	r4, r22
+ 60a:	3c 01       	movw	r6, r24
  60c:	20 91 1a 01 	lds	r18, 0x011A	; 0x80011a <calka>
  610:	30 91 1b 01 	lds	r19, 0x011B	; 0x80011b <calka+0x1>
  614:	40 91 1c 01 	lds	r20, 0x011C	; 0x80011c <calka+0x2>
  618:	50 91 1d 01 	lds	r21, 0x011D	; 0x80011d <calka+0x3>
- 61c:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <__addsf3>
+ 61c:	0e 94 d0 03 	call	0x7a0	; 0x7a0 <__addsf3>
  620:	6b 01       	movw	r12, r22
  622:	7c 01       	movw	r14, r24
 _Z9constrainIfiiEDTqultfp_fp0_fp0_qugtfp_fp1_fp1_fp_ERKT_RKT0_RKT1_():
@@ -1410,200 +1410,201 @@ _Z9constrainIfiiEDTqultfp_fp0_fp0_qugtfp_fp1_fp1_fp_ERKT_RKT0_RKT1_():
  626:	30 e8       	ldi	r19, 0x80	; 128
  628:	4b e3       	ldi	r20, 0x3B	; 59
  62a:	55 ec       	ldi	r21, 0xC5	; 197
- 62c:	0e 94 45 04 	call	0x88a	; 0x88a <__cmpsf2>
+ 62c:	0e 94 3c 04 	call	0x878	; 0x878 <__cmpsf2>
  630:	87 fd       	sbrc	r24, 7
- 632:	ae c0       	rjmp	.+348    	; 0x790 <main+0x36c>
+ 632:	a5 c0       	rjmp	.+330    	; 0x77e <main+0x35a>
  634:	20 e0       	ldi	r18, 0x00	; 0
  636:	30 e8       	ldi	r19, 0x80	; 128
  638:	4b e3       	ldi	r20, 0x3B	; 59
  63a:	55 e4       	ldi	r21, 0x45	; 69
  63c:	c7 01       	movw	r24, r14
  63e:	b6 01       	movw	r22, r12
- 640:	0e 94 32 05 	call	0xa64	; 0xa64 <__gesf2>
+ 640:	0e 94 29 05 	call	0xa52	; 0xa52 <__gesf2>
  644:	18 16       	cp	r1, r24
  646:	0c f4       	brge	.+2      	; 0x64a <main+0x226>
- 648:	ab c0       	rjmp	.+342    	; 0x7a0 <main+0x37c>
+ 648:	a2 c0       	rjmp	.+324    	; 0x78e <main+0x36a>
 loop():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:66
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:70
       calka = constrain(calka, -3000, 3000);
  64a:	c0 92 1a 01 	sts	0x011A, r12	; 0x80011a <calka>
  64e:	d0 92 1b 01 	sts	0x011B, r13	; 0x80011b <calka+0x1>
  652:	e0 92 1c 01 	sts	0x011C, r14	; 0x80011c <calka+0x2>
  656:	f0 92 1d 01 	sts	0x011D, r15	; 0x80011d <calka+0x3>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:68
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:74
 
       int rozniczka = blad - poprzedni_blad;
- 65a:	80 91 18 01 	lds	r24, 0x0118	; 0x800118 <poprzedni_blad>
- 65e:	90 91 19 01 	lds	r25, 0x0119	; 0x800119 <poprzedni_blad+0x1>
- 662:	b8 01       	movw	r22, r16
- 664:	68 1b       	sub	r22, r24
- 666:	79 0b       	sbc	r23, r25
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:70
       
       korekta = (Kp * blad) + (Ki * calka) + (Kd * rozniczka);
- 668:	07 2e       	mov	r0, r23
- 66a:	00 0c       	add	r0, r0
- 66c:	88 0b       	sbc	r24, r24
- 66e:	99 0b       	sbc	r25, r25
- 670:	0e 94 82 04 	call	0x904	; 0x904 <__floatsisf>
- 674:	20 e0       	ldi	r18, 0x00	; 0
- 676:	30 e0       	ldi	r19, 0x00	; 0
- 678:	a9 01       	movw	r20, r18
- 67a:	0e 94 37 05 	call	0xa6e	; 0xa6e <__mulsf3>
- 67e:	6b 87       	std	Y+11, r22	; 0x0b
- 680:	7c 87       	std	Y+12, r23	; 0x0c
- 682:	8d 87       	std	Y+13, r24	; 0x0d
- 684:	9e 87       	std	Y+14, r25	; 0x0e
- 686:	2f e8       	ldi	r18, 0x8F	; 143
- 688:	32 ec       	ldi	r19, 0xC2	; 194
- 68a:	45 ef       	ldi	r20, 0xF5	; 245
- 68c:	5d e3       	ldi	r21, 0x3D	; 61
- 68e:	c5 01       	movw	r24, r10
- 690:	b4 01       	movw	r22, r8
- 692:	0e 94 37 05 	call	0xa6e	; 0xa6e <__mulsf3>
- 696:	4b 01       	movw	r8, r22
- 698:	5c 01       	movw	r10, r24
- 69a:	20 e0       	ldi	r18, 0x00	; 0
- 69c:	30 e0       	ldi	r19, 0x00	; 0
- 69e:	a9 01       	movw	r20, r18
- 6a0:	c7 01       	movw	r24, r14
- 6a2:	b6 01       	movw	r22, r12
- 6a4:	0e 94 37 05 	call	0xa6e	; 0xa6e <__mulsf3>
- 6a8:	9b 01       	movw	r18, r22
- 6aa:	ac 01       	movw	r20, r24
- 6ac:	c5 01       	movw	r24, r10
- 6ae:	b4 01       	movw	r22, r8
- 6b0:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <__addsf3>
- 6b4:	9b 01       	movw	r18, r22
- 6b6:	ac 01       	movw	r20, r24
- 6b8:	6b 85       	ldd	r22, Y+11	; 0x0b
- 6ba:	7c 85       	ldd	r23, Y+12	; 0x0c
- 6bc:	8d 85       	ldd	r24, Y+13	; 0x0d
- 6be:	9e 85       	ldd	r25, Y+14	; 0x0e
- 6c0:	0e 94 d9 03 	call	0x7b2	; 0x7b2 <__addsf3>
- 6c4:	0e 94 4a 04 	call	0x894	; 0x894 <__fixsfsi>
- 6c8:	70 93 17 01 	sts	0x0117, r23	; 0x800117 <korekta+0x1>
- 6cc:	60 93 16 01 	sts	0x0116, r22	; 0x800116 <korekta>
+ 65a:	2f e8       	ldi	r18, 0x8F	; 143
+ 65c:	32 ec       	ldi	r19, 0xC2	; 194
+ 65e:	45 ef       	ldi	r20, 0xF5	; 245
+ 660:	5d e3       	ldi	r21, 0x3D	; 61
+ 662:	c3 01       	movw	r24, r6
+ 664:	b2 01       	movw	r22, r4
+ 666:	0e 94 2e 05 	call	0xa5c	; 0xa5c <__mulsf3>
+ 66a:	2b 01       	movw	r4, r22
+ 66c:	3c 01       	movw	r6, r24
+ 66e:	20 e0       	ldi	r18, 0x00	; 0
+ 670:	30 e0       	ldi	r19, 0x00	; 0
+ 672:	a9 01       	movw	r20, r18
+ 674:	c7 01       	movw	r24, r14
+ 676:	b6 01       	movw	r22, r12
+ 678:	0e 94 2e 05 	call	0xa5c	; 0xa5c <__mulsf3>
+ 67c:	9b 01       	movw	r18, r22
+ 67e:	ac 01       	movw	r20, r24
+ 680:	c3 01       	movw	r24, r6
+ 682:	b2 01       	movw	r22, r4
+ 684:	0e 94 d0 03 	call	0x7a0	; 0x7a0 <__addsf3>
+ 688:	6b 01       	movw	r12, r22
+ 68a:	7c 01       	movw	r14, r24
 /home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:72
+  // Liczymy PID tylko jeśli minęło 5 milisekund (czyli 200 razy na sekundę)
+  if (aktualny_czas - poprzedni_czas >= 5) {
+      calka = calka + blad;
+      calka = constrain(calka, -3000, 3000);
+
+      int rozniczka = blad - poprzedni_blad;
+ 68c:	80 91 18 01 	lds	r24, 0x0118	; 0x800118 <poprzedni_blad>
+ 690:	90 91 19 01 	lds	r25, 0x0119	; 0x800119 <poprzedni_blad+0x1>
+ 694:	b8 01       	movw	r22, r16
+ 696:	68 1b       	sub	r22, r24
+ 698:	79 0b       	sbc	r23, r25
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:74
+      
+      korekta = (Kp * blad) + (Ki * calka) + (Kd * rozniczka);
+ 69a:	07 2e       	mov	r0, r23
+ 69c:	00 0c       	add	r0, r0
+ 69e:	88 0b       	sbc	r24, r24
+ 6a0:	99 0b       	sbc	r25, r25
+ 6a2:	0e 94 79 04 	call	0x8f2	; 0x8f2 <__floatsisf>
+ 6a6:	9b 01       	movw	r18, r22
+ 6a8:	ac 01       	movw	r20, r24
+ 6aa:	c7 01       	movw	r24, r14
+ 6ac:	b6 01       	movw	r22, r12
+ 6ae:	0e 94 d0 03 	call	0x7a0	; 0x7a0 <__addsf3>
+ 6b2:	0e 94 41 04 	call	0x882	; 0x882 <__fixsfsi>
+ 6b6:	70 93 17 01 	sts	0x0117, r23	; 0x800117 <korekta+0x1>
+ 6ba:	60 93 16 01 	sts	0x0116, r22	; 0x800116 <korekta>
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:76
       
       poprzedni_blad = blad;
- 6d0:	10 93 19 01 	sts	0x0119, r17	; 0x800119 <poprzedni_blad+0x1>
- 6d4:	00 93 18 01 	sts	0x0118, r16	; 0x800118 <poprzedni_blad>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:73
+ 6be:	10 93 19 01 	sts	0x0119, r17	; 0x800119 <poprzedni_blad+0x1>
+ 6c2:	00 93 18 01 	sts	0x0118, r16	; 0x800118 <poprzedni_blad>
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:77
       poprzedni_czas = aktualny_czas; // Zapisujemy czas do następnego sprawdzenia
- 6d8:	40 92 1e 01 	sts	0x011E, r4	; 0x80011e <poprzedni_czas>
- 6dc:	50 92 1f 01 	sts	0x011F, r5	; 0x80011f <poprzedni_czas+0x1>
- 6e0:	60 92 20 01 	sts	0x0120, r6	; 0x800120 <poprzedni_czas+0x2>
- 6e4:	70 92 21 01 	sts	0x0121, r7	; 0x800121 <poprzedni_czas+0x3>
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:86
+ 6c6:	80 92 1e 01 	sts	0x011E, r8	; 0x80011e <poprzedni_czas>
+ 6ca:	90 92 1f 01 	sts	0x011F, r9	; 0x80011f <poprzedni_czas+0x1>
+ 6ce:	a0 92 20 01 	sts	0x0120, r10	; 0x800120 <poprzedni_czas+0x2>
+ 6d2:	b0 92 21 01 	sts	0x0121, r11	; 0x800121 <poprzedni_czas+0x3>
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:90
   // 1.0 = ostre hamowanie przed każdym łukiem
   float wspolczynnik = 0.5; 
   
   // Odejmujemy część korekty od prędkości maksymalnej.
   // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
   int aktualne_v = V_BAZA - (abs(korekta) * wspolczynnik);
- 6e8:	00 91 16 01 	lds	r16, 0x0116	; 0x800116 <korekta>
- 6ec:	10 91 17 01 	lds	r17, 0x0117	; 0x800117 <korekta+0x1>
- 6f0:	b8 01       	movw	r22, r16
- 6f2:	17 ff       	sbrs	r17, 7
- 6f4:	04 c0       	rjmp	.+8      	; 0x6fe <main+0x2da>
- 6f6:	66 27       	eor	r22, r22
- 6f8:	77 27       	eor	r23, r23
- 6fa:	60 1b       	sub	r22, r16
- 6fc:	71 0b       	sbc	r23, r17
- 6fe:	07 2e       	mov	r0, r23
- 700:	00 0c       	add	r0, r0
- 702:	88 0b       	sbc	r24, r24
- 704:	99 0b       	sbc	r25, r25
- 706:	0e 94 82 04 	call	0x904	; 0x904 <__floatsisf>
- 70a:	20 e0       	ldi	r18, 0x00	; 0
- 70c:	30 e0       	ldi	r19, 0x00	; 0
- 70e:	40 e0       	ldi	r20, 0x00	; 0
- 710:	5f e3       	ldi	r21, 0x3F	; 63
- 712:	0e 94 37 05 	call	0xa6e	; 0xa6e <__mulsf3>
- 716:	9b 01       	movw	r18, r22
- 718:	ac 01       	movw	r20, r24
- 71a:	60 e0       	ldi	r22, 0x00	; 0
- 71c:	70 e0       	ldi	r23, 0x00	; 0
- 71e:	8a e7       	ldi	r24, 0x7A	; 122
- 720:	93 e4       	ldi	r25, 0x43	; 67
- 722:	0e 94 d8 03 	call	0x7b0	; 0x7b0 <__subsf3>
- 726:	0e 94 4a 04 	call	0x894	; 0x894 <__fixsfsi>
- 72a:	cb 01       	movw	r24, r22
- 72c:	60 35       	cpi	r22, 0x50	; 80
- 72e:	71 05       	cpc	r23, r1
- 730:	14 f4       	brge	.+4      	; 0x736 <main+0x312>
- 732:	80 e5       	ldi	r24, 0x50	; 80
- 734:	90 e0       	ldi	r25, 0x00	; 0
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:97
+ 6d6:	00 91 16 01 	lds	r16, 0x0116	; 0x800116 <korekta>
+ 6da:	10 91 17 01 	lds	r17, 0x0117	; 0x800117 <korekta+0x1>
+ 6de:	b8 01       	movw	r22, r16
+ 6e0:	17 ff       	sbrs	r17, 7
+ 6e2:	04 c0       	rjmp	.+8      	; 0x6ec <main+0x2c8>
+ 6e4:	66 27       	eor	r22, r22
+ 6e6:	77 27       	eor	r23, r23
+ 6e8:	60 1b       	sub	r22, r16
+ 6ea:	71 0b       	sbc	r23, r17
+ 6ec:	07 2e       	mov	r0, r23
+ 6ee:	00 0c       	add	r0, r0
+ 6f0:	88 0b       	sbc	r24, r24
+ 6f2:	99 0b       	sbc	r25, r25
+ 6f4:	0e 94 79 04 	call	0x8f2	; 0x8f2 <__floatsisf>
+ 6f8:	20 e0       	ldi	r18, 0x00	; 0
+ 6fa:	30 e0       	ldi	r19, 0x00	; 0
+ 6fc:	40 e0       	ldi	r20, 0x00	; 0
+ 6fe:	5f e3       	ldi	r21, 0x3F	; 63
+ 700:	0e 94 2e 05 	call	0xa5c	; 0xa5c <__mulsf3>
+ 704:	9b 01       	movw	r18, r22
+ 706:	ac 01       	movw	r20, r24
+ 708:	60 e0       	ldi	r22, 0x00	; 0
+ 70a:	70 e0       	ldi	r23, 0x00	; 0
+ 70c:	8a e7       	ldi	r24, 0x7A	; 122
+ 70e:	93 e4       	ldi	r25, 0x43	; 67
+ 710:	0e 94 cf 03 	call	0x79e	; 0x79e <__subsf3>
+ 714:	0e 94 41 04 	call	0x882	; 0x882 <__fixsfsi>
+ 718:	cb 01       	movw	r24, r22
+ 71a:	60 35       	cpi	r22, 0x50	; 80
+ 71c:	71 05       	cpc	r23, r1
+ 71e:	14 f4       	brge	.+4      	; 0x724 <main+0x300>
+ 720:	80 e5       	ldi	r24, 0x50	; 80
+ 722:	90 e0       	ldi	r25, 0x00	; 0
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:101
       aktualne_v = 80;
   }
 
   // Obliczamy ostateczną moc na koła używając nowej, bezpiecznej bazy
   int moc_lewy  = aktualne_v + korekta;
   int moc_prawy = aktualne_v - korekta;
- 736:	bc 01       	movw	r22, r24
- 738:	60 1b       	sub	r22, r16
- 73a:	71 0b       	sbc	r23, r17
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:99
+ 724:	bc 01       	movw	r22, r24
+ 726:	60 1b       	sub	r22, r16
+ 728:	71 0b       	sbc	r23, r17
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:103
 
   move(moc_lewy, moc_prawy);
- 73c:	80 0f       	add	r24, r16
- 73e:	91 1f       	adc	r25, r17
- 740:	18 c0       	rjmp	.+48     	; 0x772 <main+0x34e>
+ 72a:	80 0f       	add	r24, r16
+ 72c:	91 1f       	adc	r25, r17
+ 72e:	18 c0       	rjmp	.+48     	; 0x760 <main+0x33c>
 oblicz_pozycje():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:120
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:124
   if (aktywnych == 0) return 10000;
 
   int pozycja = suma_wag / aktywnych;
 
   if (pozycja < 0) ostatni_kierunek = -1;
   else if (pozycja > 0) ostatni_kierunek = 1;
- 742:	89 2b       	or	r24, r25
- 744:	09 f4       	brne	.+2      	; 0x748 <main+0x324>
- 746:	31 cf       	rjmp	.-414    	; 0x5aa <main+0x186>
- 748:	a1 e0       	ldi	r26, 0x01	; 1
- 74a:	b0 e0       	ldi	r27, 0x00	; 0
- 74c:	b0 93 15 01 	sts	0x0115, r27	; 0x800115 <__data_end+0x1>
- 750:	a0 93 14 01 	sts	0x0114, r26	; 0x800114 <__data_end>
+ 730:	89 2b       	or	r24, r25
+ 732:	09 f4       	brne	.+2      	; 0x736 <main+0x312>
+ 734:	3a cf       	rjmp	.-396    	; 0x5aa <main+0x186>
+ 736:	a1 e0       	ldi	r26, 0x01	; 1
+ 738:	b0 e0       	ldi	r27, 0x00	; 0
+ 73a:	b0 93 15 01 	sts	0x0115, r27	; 0x800115 <__data_end+0x1>
+ 73e:	a0 93 14 01 	sts	0x0114, r26	; 0x800114 <__data_end>
 loop():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:53
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:57
 }
 
 void loop() {
   int pozycja = oblicz_pozycje();
 
   if (pozycja == 10000) {
- 754:	20 31       	cpi	r18, 0x10	; 16
- 756:	b7 e2       	ldi	r27, 0x27	; 39
- 758:	3b 07       	cpc	r19, r27
- 75a:	09 f0       	breq	.+2      	; 0x75e <main+0x33a>
- 75c:	26 cf       	rjmp	.-436    	; 0x5aa <main+0x186>
+ 742:	20 31       	cpi	r18, 0x10	; 16
+ 744:	b7 e2       	ldi	r27, 0x27	; 39
+ 746:	3b 07       	cpc	r19, r27
+ 748:	09 f0       	breq	.+2      	; 0x74c <main+0x328>
+ 74a:	2f cf       	rjmp	.-418    	; 0x5aa <main+0x186>
 szukaj_linii():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:126
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:130
 
   return pozycja;
 }
 
 void szukaj_linii() {
   if (ostatni_kierunek == -1) move(-80, 80); 
- 75e:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <__data_end>
- 762:	90 91 15 01 	lds	r25, 0x0115	; 0x800115 <__data_end+0x1>
- 766:	01 96       	adiw	r24, 0x01	; 1
- 768:	71 f4       	brne	.+28     	; 0x786 <main+0x362>
- 76a:	60 e5       	ldi	r22, 0x50	; 80
- 76c:	70 e0       	ldi	r23, 0x00	; 0
- 76e:	80 eb       	ldi	r24, 0xB0	; 176
- 770:	9f ef       	ldi	r25, 0xFF	; 255
+ 74c:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <__data_end>
+ 750:	90 91 15 01 	lds	r25, 0x0115	; 0x800115 <__data_end+0x1>
+ 754:	01 96       	adiw	r24, 0x01	; 1
+ 756:	71 f4       	brne	.+28     	; 0x774 <main+0x350>
+ 758:	60 e5       	ldi	r22, 0x50	; 80
+ 75a:	70 e0       	ldi	r23, 0x00	; 0
+ 75c:	80 eb       	ldi	r24, 0xB0	; 176
+ 75e:	9f ef       	ldi	r25, 0xFF	; 255
 loop():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:99
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:103
 
   // Obliczamy ostateczną moc na koła używając nowej, bezpiecznej bazy
   int moc_lewy  = aktualne_v + korekta;
   int moc_prawy = aktualne_v - korekta;
 
   move(moc_lewy, moc_prawy);
- 772:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <move(int, int)>
+ 760:	0e 94 6c 01 	call	0x2d8	; 0x2d8 <move(int, int)>
 main():
 /home/blobinnit/.arduino15/packages/MiniCore/hardware/avr/3.1.2/cores/MCUdude_corefiles/main.cpp:47
   
@@ -1612,682 +1613,682 @@ main():
   for (;;) {
     loop();
     if (serialEventRun) serialEventRun();
- 776:	60 e0       	ldi	r22, 0x00	; 0
- 778:	70 e0       	ldi	r23, 0x00	; 0
- 77a:	67 2b       	or	r22, r23
- 77c:	09 f4       	brne	.+2      	; 0x780 <main+0x35c>
- 77e:	be ce       	rjmp	.-644    	; 0x4fc <main+0xd8>
- 780:	0e 94 00 00 	call	0	; 0x0 <__vectors>
- 784:	bb ce       	rjmp	.-650    	; 0x4fc <main+0xd8>
+ 764:	60 e0       	ldi	r22, 0x00	; 0
+ 766:	70 e0       	ldi	r23, 0x00	; 0
+ 768:	67 2b       	or	r22, r23
+ 76a:	09 f4       	brne	.+2      	; 0x76e <main+0x34a>
+ 76c:	c7 ce       	rjmp	.-626    	; 0x4fc <main+0xd8>
+ 76e:	0e 94 00 00 	call	0	; 0x0 <__vectors>
+ 772:	c4 ce       	rjmp	.-632    	; 0x4fc <main+0xd8>
 szukaj_linii():
-/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:127
+/home/blobinnit/github_repos/ATMega328/linefollowerznowymipinami/linefollowerznowymipinami.ino:131
   return pozycja;
 }
 
 void szukaj_linii() {
   if (ostatni_kierunek == -1) move(-80, 80); 
   else move(80, -80);
- 786:	60 eb       	ldi	r22, 0xB0	; 176
- 788:	7f ef       	ldi	r23, 0xFF	; 255
- 78a:	80 e5       	ldi	r24, 0x50	; 80
- 78c:	90 e0       	ldi	r25, 0x00	; 0
- 78e:	f1 cf       	rjmp	.-30     	; 0x772 <main+0x34e>
+ 774:	60 eb       	ldi	r22, 0xB0	; 176
+ 776:	7f ef       	ldi	r23, 0xFF	; 255
+ 778:	80 e5       	ldi	r24, 0x50	; 80
+ 77a:	90 e0       	ldi	r25, 0x00	; 0
+ 77c:	f1 cf       	rjmp	.-30     	; 0x760 <main+0x33c>
 main():
 /home/blobinnit/.arduino15/packages/MiniCore/hardware/avr/3.1.2/cores/MCUdude_corefiles/Arduino.h:345
- 790:	c1 2c       	mov	r12, r1
- 792:	90 e8       	ldi	r25, 0x80	; 128
- 794:	d9 2e       	mov	r13, r25
- 796:	9b e3       	ldi	r25, 0x3B	; 59
- 798:	e9 2e       	mov	r14, r25
- 79a:	95 ec       	ldi	r25, 0xC5	; 197
- 79c:	f9 2e       	mov	r15, r25
- 79e:	55 cf       	rjmp	.-342    	; 0x64a <main+0x226>
- 7a0:	c1 2c       	mov	r12, r1
- 7a2:	80 e8       	ldi	r24, 0x80	; 128
- 7a4:	d8 2e       	mov	r13, r24
- 7a6:	8b e3       	ldi	r24, 0x3B	; 59
- 7a8:	e8 2e       	mov	r14, r24
- 7aa:	85 e4       	ldi	r24, 0x45	; 69
- 7ac:	f8 2e       	mov	r15, r24
- 7ae:	4d cf       	rjmp	.-358    	; 0x64a <main+0x226>
+ 77e:	c1 2c       	mov	r12, r1
+ 780:	90 e8       	ldi	r25, 0x80	; 128
+ 782:	d9 2e       	mov	r13, r25
+ 784:	9b e3       	ldi	r25, 0x3B	; 59
+ 786:	e9 2e       	mov	r14, r25
+ 788:	95 ec       	ldi	r25, 0xC5	; 197
+ 78a:	f9 2e       	mov	r15, r25
+ 78c:	5e cf       	rjmp	.-324    	; 0x64a <main+0x226>
+ 78e:	c1 2c       	mov	r12, r1
+ 790:	80 e8       	ldi	r24, 0x80	; 128
+ 792:	d8 2e       	mov	r13, r24
+ 794:	8b e3       	ldi	r24, 0x3B	; 59
+ 796:	e8 2e       	mov	r14, r24
+ 798:	85 e4       	ldi	r24, 0x45	; 69
+ 79a:	f8 2e       	mov	r15, r24
+ 79c:	56 cf       	rjmp	.-340    	; 0x64a <main+0x226>
 
-000007b0 <__subsf3>:
+0000079e <__subsf3>:
 __subsf3():
- 7b0:	50 58       	subi	r21, 0x80	; 128
+ 79e:	50 58       	subi	r21, 0x80	; 128
 
-000007b2 <__addsf3>:
- 7b2:	bb 27       	eor	r27, r27
- 7b4:	aa 27       	eor	r26, r26
- 7b6:	0e 94 f0 03 	call	0x7e0	; 0x7e0 <__addsf3x>
- 7ba:	0c 94 f8 04 	jmp	0x9f0	; 0x9f0 <__fp_round>
+000007a0 <__addsf3>:
+ 7a0:	bb 27       	eor	r27, r27
+ 7a2:	aa 27       	eor	r26, r26
+ 7a4:	0e 94 e7 03 	call	0x7ce	; 0x7ce <__addsf3x>
+ 7a8:	0c 94 ef 04 	jmp	0x9de	; 0x9de <__fp_round>
 __addsf3():
- 7be:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <__fp_pscA>
- 7c2:	38 f0       	brcs	.+14     	; 0x7d2 <__addsf3+0x20>
- 7c4:	0e 94 f1 04 	call	0x9e2	; 0x9e2 <__fp_pscB>
- 7c8:	20 f0       	brcs	.+8      	; 0x7d2 <__addsf3+0x20>
- 7ca:	39 f4       	brne	.+14     	; 0x7da <__addsf3+0x28>
- 7cc:	9f 3f       	cpi	r25, 0xFF	; 255
- 7ce:	19 f4       	brne	.+6      	; 0x7d6 <__addsf3+0x24>
- 7d0:	26 f4       	brtc	.+8      	; 0x7da <__addsf3+0x28>
- 7d2:	0c 94 e7 04 	jmp	0x9ce	; 0x9ce <__fp_nan>
- 7d6:	0e f4       	brtc	.+2      	; 0x7da <__addsf3+0x28>
- 7d8:	e0 95       	com	r30
- 7da:	e7 fb       	bst	r30, 7
- 7dc:	0c 94 e1 04 	jmp	0x9c2	; 0x9c2 <__fp_inf>
+ 7ac:	0e 94 e1 04 	call	0x9c2	; 0x9c2 <__fp_pscA>
+ 7b0:	38 f0       	brcs	.+14     	; 0x7c0 <__addsf3+0x20>
+ 7b2:	0e 94 e8 04 	call	0x9d0	; 0x9d0 <__fp_pscB>
+ 7b6:	20 f0       	brcs	.+8      	; 0x7c0 <__addsf3+0x20>
+ 7b8:	39 f4       	brne	.+14     	; 0x7c8 <__addsf3+0x28>
+ 7ba:	9f 3f       	cpi	r25, 0xFF	; 255
+ 7bc:	19 f4       	brne	.+6      	; 0x7c4 <__addsf3+0x24>
+ 7be:	26 f4       	brtc	.+8      	; 0x7c8 <__addsf3+0x28>
+ 7c0:	0c 94 de 04 	jmp	0x9bc	; 0x9bc <__fp_nan>
+ 7c4:	0e f4       	brtc	.+2      	; 0x7c8 <__addsf3+0x28>
+ 7c6:	e0 95       	com	r30
+ 7c8:	e7 fb       	bst	r30, 7
+ 7ca:	0c 94 d8 04 	jmp	0x9b0	; 0x9b0 <__fp_inf>
 
-000007e0 <__addsf3x>:
+000007ce <__addsf3x>:
 __addsf3x():
- 7e0:	e9 2f       	mov	r30, r25
- 7e2:	0e 94 09 05 	call	0xa12	; 0xa12 <__fp_split3>
- 7e6:	58 f3       	brcs	.-42     	; 0x7be <__addsf3+0xc>
- 7e8:	ba 17       	cp	r27, r26
- 7ea:	62 07       	cpc	r22, r18
- 7ec:	73 07       	cpc	r23, r19
- 7ee:	84 07       	cpc	r24, r20
- 7f0:	95 07       	cpc	r25, r21
- 7f2:	20 f0       	brcs	.+8      	; 0x7fc <__addsf3x+0x1c>
- 7f4:	79 f4       	brne	.+30     	; 0x814 <__addsf3x+0x34>
- 7f6:	a6 f5       	brtc	.+104    	; 0x860 <__addsf3x+0x80>
- 7f8:	0c 94 2b 05 	jmp	0xa56	; 0xa56 <__fp_zero>
- 7fc:	0e f4       	brtc	.+2      	; 0x800 <__addsf3x+0x20>
- 7fe:	e0 95       	com	r30
- 800:	0b 2e       	mov	r0, r27
- 802:	ba 2f       	mov	r27, r26
- 804:	a0 2d       	mov	r26, r0
- 806:	0b 01       	movw	r0, r22
- 808:	b9 01       	movw	r22, r18
- 80a:	90 01       	movw	r18, r0
- 80c:	0c 01       	movw	r0, r24
- 80e:	ca 01       	movw	r24, r20
- 810:	a0 01       	movw	r20, r0
- 812:	11 24       	eor	r1, r1
- 814:	ff 27       	eor	r31, r31
- 816:	59 1b       	sub	r21, r25
- 818:	99 f0       	breq	.+38     	; 0x840 <__addsf3x+0x60>
- 81a:	59 3f       	cpi	r21, 0xF9	; 249
- 81c:	50 f4       	brcc	.+20     	; 0x832 <__addsf3x+0x52>
- 81e:	50 3e       	cpi	r21, 0xE0	; 224
- 820:	68 f1       	brcs	.+90     	; 0x87c <__addsf3x+0x9c>
- 822:	1a 16       	cp	r1, r26
- 824:	f0 40       	sbci	r31, 0x00	; 0
- 826:	a2 2f       	mov	r26, r18
- 828:	23 2f       	mov	r18, r19
- 82a:	34 2f       	mov	r19, r20
- 82c:	44 27       	eor	r20, r20
- 82e:	58 5f       	subi	r21, 0xF8	; 248
- 830:	f3 cf       	rjmp	.-26     	; 0x818 <__addsf3x+0x38>
- 832:	46 95       	lsr	r20
- 834:	37 95       	ror	r19
- 836:	27 95       	ror	r18
- 838:	a7 95       	ror	r26
- 83a:	f0 40       	sbci	r31, 0x00	; 0
- 83c:	53 95       	inc	r21
- 83e:	c9 f7       	brne	.-14     	; 0x832 <__addsf3x+0x52>
- 840:	7e f4       	brtc	.+30     	; 0x860 <__addsf3x+0x80>
- 842:	1f 16       	cp	r1, r31
- 844:	ba 0b       	sbc	r27, r26
- 846:	62 0b       	sbc	r22, r18
- 848:	73 0b       	sbc	r23, r19
- 84a:	84 0b       	sbc	r24, r20
- 84c:	ba f0       	brmi	.+46     	; 0x87c <__addsf3x+0x9c>
- 84e:	91 50       	subi	r25, 0x01	; 1
- 850:	a1 f0       	breq	.+40     	; 0x87a <__addsf3x+0x9a>
- 852:	ff 0f       	add	r31, r31
- 854:	bb 1f       	adc	r27, r27
- 856:	66 1f       	adc	r22, r22
- 858:	77 1f       	adc	r23, r23
- 85a:	88 1f       	adc	r24, r24
- 85c:	c2 f7       	brpl	.-16     	; 0x84e <__addsf3x+0x6e>
- 85e:	0e c0       	rjmp	.+28     	; 0x87c <__addsf3x+0x9c>
- 860:	ba 0f       	add	r27, r26
- 862:	62 1f       	adc	r22, r18
- 864:	73 1f       	adc	r23, r19
- 866:	84 1f       	adc	r24, r20
- 868:	48 f4       	brcc	.+18     	; 0x87c <__addsf3x+0x9c>
- 86a:	87 95       	ror	r24
- 86c:	77 95       	ror	r23
- 86e:	67 95       	ror	r22
- 870:	b7 95       	ror	r27
- 872:	f7 95       	ror	r31
- 874:	9e 3f       	cpi	r25, 0xFE	; 254
- 876:	08 f0       	brcs	.+2      	; 0x87a <__addsf3x+0x9a>
- 878:	b0 cf       	rjmp	.-160    	; 0x7da <__addsf3+0x28>
- 87a:	93 95       	inc	r25
- 87c:	88 0f       	add	r24, r24
- 87e:	08 f0       	brcs	.+2      	; 0x882 <__addsf3x+0xa2>
- 880:	99 27       	eor	r25, r25
- 882:	ee 0f       	add	r30, r30
- 884:	97 95       	ror	r25
- 886:	87 95       	ror	r24
- 888:	08 95       	ret
+ 7ce:	e9 2f       	mov	r30, r25
+ 7d0:	0e 94 00 05 	call	0xa00	; 0xa00 <__fp_split3>
+ 7d4:	58 f3       	brcs	.-42     	; 0x7ac <__addsf3+0xc>
+ 7d6:	ba 17       	cp	r27, r26
+ 7d8:	62 07       	cpc	r22, r18
+ 7da:	73 07       	cpc	r23, r19
+ 7dc:	84 07       	cpc	r24, r20
+ 7de:	95 07       	cpc	r25, r21
+ 7e0:	20 f0       	brcs	.+8      	; 0x7ea <__addsf3x+0x1c>
+ 7e2:	79 f4       	brne	.+30     	; 0x802 <__addsf3x+0x34>
+ 7e4:	a6 f5       	brtc	.+104    	; 0x84e <__addsf3x+0x80>
+ 7e6:	0c 94 22 05 	jmp	0xa44	; 0xa44 <__fp_zero>
+ 7ea:	0e f4       	brtc	.+2      	; 0x7ee <__addsf3x+0x20>
+ 7ec:	e0 95       	com	r30
+ 7ee:	0b 2e       	mov	r0, r27
+ 7f0:	ba 2f       	mov	r27, r26
+ 7f2:	a0 2d       	mov	r26, r0
+ 7f4:	0b 01       	movw	r0, r22
+ 7f6:	b9 01       	movw	r22, r18
+ 7f8:	90 01       	movw	r18, r0
+ 7fa:	0c 01       	movw	r0, r24
+ 7fc:	ca 01       	movw	r24, r20
+ 7fe:	a0 01       	movw	r20, r0
+ 800:	11 24       	eor	r1, r1
+ 802:	ff 27       	eor	r31, r31
+ 804:	59 1b       	sub	r21, r25
+ 806:	99 f0       	breq	.+38     	; 0x82e <__addsf3x+0x60>
+ 808:	59 3f       	cpi	r21, 0xF9	; 249
+ 80a:	50 f4       	brcc	.+20     	; 0x820 <__addsf3x+0x52>
+ 80c:	50 3e       	cpi	r21, 0xE0	; 224
+ 80e:	68 f1       	brcs	.+90     	; 0x86a <__addsf3x+0x9c>
+ 810:	1a 16       	cp	r1, r26
+ 812:	f0 40       	sbci	r31, 0x00	; 0
+ 814:	a2 2f       	mov	r26, r18
+ 816:	23 2f       	mov	r18, r19
+ 818:	34 2f       	mov	r19, r20
+ 81a:	44 27       	eor	r20, r20
+ 81c:	58 5f       	subi	r21, 0xF8	; 248
+ 81e:	f3 cf       	rjmp	.-26     	; 0x806 <__addsf3x+0x38>
+ 820:	46 95       	lsr	r20
+ 822:	37 95       	ror	r19
+ 824:	27 95       	ror	r18
+ 826:	a7 95       	ror	r26
+ 828:	f0 40       	sbci	r31, 0x00	; 0
+ 82a:	53 95       	inc	r21
+ 82c:	c9 f7       	brne	.-14     	; 0x820 <__addsf3x+0x52>
+ 82e:	7e f4       	brtc	.+30     	; 0x84e <__addsf3x+0x80>
+ 830:	1f 16       	cp	r1, r31
+ 832:	ba 0b       	sbc	r27, r26
+ 834:	62 0b       	sbc	r22, r18
+ 836:	73 0b       	sbc	r23, r19
+ 838:	84 0b       	sbc	r24, r20
+ 83a:	ba f0       	brmi	.+46     	; 0x86a <__addsf3x+0x9c>
+ 83c:	91 50       	subi	r25, 0x01	; 1
+ 83e:	a1 f0       	breq	.+40     	; 0x868 <__addsf3x+0x9a>
+ 840:	ff 0f       	add	r31, r31
+ 842:	bb 1f       	adc	r27, r27
+ 844:	66 1f       	adc	r22, r22
+ 846:	77 1f       	adc	r23, r23
+ 848:	88 1f       	adc	r24, r24
+ 84a:	c2 f7       	brpl	.-16     	; 0x83c <__addsf3x+0x6e>
+ 84c:	0e c0       	rjmp	.+28     	; 0x86a <__addsf3x+0x9c>
+ 84e:	ba 0f       	add	r27, r26
+ 850:	62 1f       	adc	r22, r18
+ 852:	73 1f       	adc	r23, r19
+ 854:	84 1f       	adc	r24, r20
+ 856:	48 f4       	brcc	.+18     	; 0x86a <__addsf3x+0x9c>
+ 858:	87 95       	ror	r24
+ 85a:	77 95       	ror	r23
+ 85c:	67 95       	ror	r22
+ 85e:	b7 95       	ror	r27
+ 860:	f7 95       	ror	r31
+ 862:	9e 3f       	cpi	r25, 0xFE	; 254
+ 864:	08 f0       	brcs	.+2      	; 0x868 <__addsf3x+0x9a>
+ 866:	b0 cf       	rjmp	.-160    	; 0x7c8 <__addsf3+0x28>
+ 868:	93 95       	inc	r25
+ 86a:	88 0f       	add	r24, r24
+ 86c:	08 f0       	brcs	.+2      	; 0x870 <__addsf3x+0xa2>
+ 86e:	99 27       	eor	r25, r25
+ 870:	ee 0f       	add	r30, r30
+ 872:	97 95       	ror	r25
+ 874:	87 95       	ror	r24
+ 876:	08 95       	ret
 
-0000088a <__cmpsf2>:
- 88a:	0e 94 bd 04 	call	0x97a	; 0x97a <__fp_cmp>
- 88e:	08 f4       	brcc	.+2      	; 0x892 <__cmpsf2+0x8>
- 890:	81 e0       	ldi	r24, 0x01	; 1
- 892:	08 95       	ret
+00000878 <__cmpsf2>:
+ 878:	0e 94 b4 04 	call	0x968	; 0x968 <__fp_cmp>
+ 87c:	08 f4       	brcc	.+2      	; 0x880 <__cmpsf2+0x8>
+ 87e:	81 e0       	ldi	r24, 0x01	; 1
+ 880:	08 95       	ret
 
-00000894 <__fixsfsi>:
- 894:	0e 94 51 04 	call	0x8a2	; 0x8a2 <__fixunssfsi>
- 898:	68 94       	set
- 89a:	b1 11       	cpse	r27, r1
- 89c:	0c 94 2c 05 	jmp	0xa58	; 0xa58 <__fp_szero>
- 8a0:	08 95       	ret
+00000882 <__fixsfsi>:
+ 882:	0e 94 48 04 	call	0x890	; 0x890 <__fixunssfsi>
+ 886:	68 94       	set
+ 888:	b1 11       	cpse	r27, r1
+ 88a:	0c 94 23 05 	jmp	0xa46	; 0xa46 <__fp_szero>
+ 88e:	08 95       	ret
 
-000008a2 <__fixunssfsi>:
- 8a2:	0e 94 11 05 	call	0xa22	; 0xa22 <__fp_splitA>
- 8a6:	88 f0       	brcs	.+34     	; 0x8ca <__fixunssfsi+0x28>
- 8a8:	9f 57       	subi	r25, 0x7F	; 127
- 8aa:	98 f0       	brcs	.+38     	; 0x8d2 <__fixunssfsi+0x30>
+00000890 <__fixunssfsi>:
+ 890:	0e 94 08 05 	call	0xa10	; 0xa10 <__fp_splitA>
+ 894:	88 f0       	brcs	.+34     	; 0x8b8 <__fixunssfsi+0x28>
+ 896:	9f 57       	subi	r25, 0x7F	; 127
+ 898:	98 f0       	brcs	.+38     	; 0x8c0 <__fixunssfsi+0x30>
 __fixunssfsi():
- 8ac:	b9 2f       	mov	r27, r25
- 8ae:	99 27       	eor	r25, r25
- 8b0:	b7 51       	subi	r27, 0x17	; 23
- 8b2:	b0 f0       	brcs	.+44     	; 0x8e0 <__fixunssfsi+0x3e>
- 8b4:	e1 f0       	breq	.+56     	; 0x8ee <__fixunssfsi+0x4c>
- 8b6:	66 0f       	add	r22, r22
- 8b8:	77 1f       	adc	r23, r23
- 8ba:	88 1f       	adc	r24, r24
- 8bc:	99 1f       	adc	r25, r25
- 8be:	1a f0       	brmi	.+6      	; 0x8c6 <__fixunssfsi+0x24>
- 8c0:	ba 95       	dec	r27
- 8c2:	c9 f7       	brne	.-14     	; 0x8b6 <__fixunssfsi+0x14>
- 8c4:	14 c0       	rjmp	.+40     	; 0x8ee <__fixunssfsi+0x4c>
- 8c6:	b1 30       	cpi	r27, 0x01	; 1
- 8c8:	91 f0       	breq	.+36     	; 0x8ee <__fixunssfsi+0x4c>
- 8ca:	0e 94 2b 05 	call	0xa56	; 0xa56 <__fp_zero>
- 8ce:	b1 e0       	ldi	r27, 0x01	; 1
- 8d0:	08 95       	ret
- 8d2:	0c 94 2b 05 	jmp	0xa56	; 0xa56 <__fp_zero>
- 8d6:	67 2f       	mov	r22, r23
- 8d8:	78 2f       	mov	r23, r24
- 8da:	88 27       	eor	r24, r24
- 8dc:	b8 5f       	subi	r27, 0xF8	; 248
- 8de:	39 f0       	breq	.+14     	; 0x8ee <__fixunssfsi+0x4c>
- 8e0:	b9 3f       	cpi	r27, 0xF9	; 249
- 8e2:	cc f3       	brlt	.-14     	; 0x8d6 <__fixunssfsi+0x34>
- 8e4:	86 95       	lsr	r24
- 8e6:	77 95       	ror	r23
- 8e8:	67 95       	ror	r22
- 8ea:	b3 95       	inc	r27
- 8ec:	d9 f7       	brne	.-10     	; 0x8e4 <__fixunssfsi+0x42>
- 8ee:	3e f4       	brtc	.+14     	; 0x8fe <__fixunssfsi+0x5c>
- 8f0:	90 95       	com	r25
- 8f2:	80 95       	com	r24
- 8f4:	70 95       	com	r23
- 8f6:	61 95       	neg	r22
- 8f8:	7f 4f       	sbci	r23, 0xFF	; 255
- 8fa:	8f 4f       	sbci	r24, 0xFF	; 255
- 8fc:	9f 4f       	sbci	r25, 0xFF	; 255
- 8fe:	08 95       	ret
+ 89a:	b9 2f       	mov	r27, r25
+ 89c:	99 27       	eor	r25, r25
+ 89e:	b7 51       	subi	r27, 0x17	; 23
+ 8a0:	b0 f0       	brcs	.+44     	; 0x8ce <__fixunssfsi+0x3e>
+ 8a2:	e1 f0       	breq	.+56     	; 0x8dc <__fixunssfsi+0x4c>
+ 8a4:	66 0f       	add	r22, r22
+ 8a6:	77 1f       	adc	r23, r23
+ 8a8:	88 1f       	adc	r24, r24
+ 8aa:	99 1f       	adc	r25, r25
+ 8ac:	1a f0       	brmi	.+6      	; 0x8b4 <__fixunssfsi+0x24>
+ 8ae:	ba 95       	dec	r27
+ 8b0:	c9 f7       	brne	.-14     	; 0x8a4 <__fixunssfsi+0x14>
+ 8b2:	14 c0       	rjmp	.+40     	; 0x8dc <__fixunssfsi+0x4c>
+ 8b4:	b1 30       	cpi	r27, 0x01	; 1
+ 8b6:	91 f0       	breq	.+36     	; 0x8dc <__fixunssfsi+0x4c>
+ 8b8:	0e 94 22 05 	call	0xa44	; 0xa44 <__fp_zero>
+ 8bc:	b1 e0       	ldi	r27, 0x01	; 1
+ 8be:	08 95       	ret
+ 8c0:	0c 94 22 05 	jmp	0xa44	; 0xa44 <__fp_zero>
+ 8c4:	67 2f       	mov	r22, r23
+ 8c6:	78 2f       	mov	r23, r24
+ 8c8:	88 27       	eor	r24, r24
+ 8ca:	b8 5f       	subi	r27, 0xF8	; 248
+ 8cc:	39 f0       	breq	.+14     	; 0x8dc <__fixunssfsi+0x4c>
+ 8ce:	b9 3f       	cpi	r27, 0xF9	; 249
+ 8d0:	cc f3       	brlt	.-14     	; 0x8c4 <__fixunssfsi+0x34>
+ 8d2:	86 95       	lsr	r24
+ 8d4:	77 95       	ror	r23
+ 8d6:	67 95       	ror	r22
+ 8d8:	b3 95       	inc	r27
+ 8da:	d9 f7       	brne	.-10     	; 0x8d2 <__fixunssfsi+0x42>
+ 8dc:	3e f4       	brtc	.+14     	; 0x8ec <__fixunssfsi+0x5c>
+ 8de:	90 95       	com	r25
+ 8e0:	80 95       	com	r24
+ 8e2:	70 95       	com	r23
+ 8e4:	61 95       	neg	r22
+ 8e6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 8e8:	8f 4f       	sbci	r24, 0xFF	; 255
+ 8ea:	9f 4f       	sbci	r25, 0xFF	; 255
+ 8ec:	08 95       	ret
 
-00000900 <__floatunsisf>:
+000008ee <__floatunsisf>:
 __floatunsisf():
- 900:	e8 94       	clt
- 902:	09 c0       	rjmp	.+18     	; 0x916 <__floatsisf+0x12>
+ 8ee:	e8 94       	clt
+ 8f0:	09 c0       	rjmp	.+18     	; 0x904 <__stack+0x5>
 
-00000904 <__floatsisf>:
- 904:	97 fb       	bst	r25, 7
- 906:	3e f4       	brtc	.+14     	; 0x916 <__floatsisf+0x12>
- 908:	90 95       	com	r25
- 90a:	80 95       	com	r24
- 90c:	70 95       	com	r23
- 90e:	61 95       	neg	r22
- 910:	7f 4f       	sbci	r23, 0xFF	; 255
- 912:	8f 4f       	sbci	r24, 0xFF	; 255
- 914:	9f 4f       	sbci	r25, 0xFF	; 255
- 916:	99 23       	and	r25, r25
- 918:	a9 f0       	breq	.+42     	; 0x944 <__floatsisf+0x40>
- 91a:	f9 2f       	mov	r31, r25
- 91c:	96 e9       	ldi	r25, 0x96	; 150
- 91e:	bb 27       	eor	r27, r27
- 920:	93 95       	inc	r25
- 922:	f6 95       	lsr	r31
- 924:	87 95       	ror	r24
- 926:	77 95       	ror	r23
- 928:	67 95       	ror	r22
- 92a:	b7 95       	ror	r27
- 92c:	f1 11       	cpse	r31, r1
- 92e:	f8 cf       	rjmp	.-16     	; 0x920 <__floatsisf+0x1c>
- 930:	fa f4       	brpl	.+62     	; 0x970 <__floatsisf+0x6c>
- 932:	bb 0f       	add	r27, r27
- 934:	11 f4       	brne	.+4      	; 0x93a <__floatsisf+0x36>
- 936:	60 ff       	sbrs	r22, 0
- 938:	1b c0       	rjmp	.+54     	; 0x970 <__floatsisf+0x6c>
- 93a:	6f 5f       	subi	r22, 0xFF	; 255
- 93c:	7f 4f       	sbci	r23, 0xFF	; 255
- 93e:	8f 4f       	sbci	r24, 0xFF	; 255
- 940:	9f 4f       	sbci	r25, 0xFF	; 255
- 942:	16 c0       	rjmp	.+44     	; 0x970 <__floatsisf+0x6c>
- 944:	88 23       	and	r24, r24
- 946:	11 f0       	breq	.+4      	; 0x94c <__floatsisf+0x48>
- 948:	96 e9       	ldi	r25, 0x96	; 150
- 94a:	11 c0       	rjmp	.+34     	; 0x96e <__floatsisf+0x6a>
- 94c:	77 23       	and	r23, r23
- 94e:	21 f0       	breq	.+8      	; 0x958 <__floatsisf+0x54>
- 950:	9e e8       	ldi	r25, 0x8E	; 142
- 952:	87 2f       	mov	r24, r23
- 954:	76 2f       	mov	r23, r22
- 956:	05 c0       	rjmp	.+10     	; 0x962 <__floatsisf+0x5e>
- 958:	66 23       	and	r22, r22
- 95a:	71 f0       	breq	.+28     	; 0x978 <__floatsisf+0x74>
- 95c:	96 e8       	ldi	r25, 0x86	; 134
- 95e:	86 2f       	mov	r24, r22
- 960:	70 e0       	ldi	r23, 0x00	; 0
- 962:	60 e0       	ldi	r22, 0x00	; 0
- 964:	2a f0       	brmi	.+10     	; 0x970 <__floatsisf+0x6c>
- 966:	9a 95       	dec	r25
- 968:	66 0f       	add	r22, r22
- 96a:	77 1f       	adc	r23, r23
- 96c:	88 1f       	adc	r24, r24
- 96e:	da f7       	brpl	.-10     	; 0x966 <__floatsisf+0x62>
- 970:	88 0f       	add	r24, r24
- 972:	96 95       	lsr	r25
- 974:	87 95       	ror	r24
- 976:	97 f9       	bld	r25, 7
- 978:	08 95       	ret
+000008f2 <__floatsisf>:
+ 8f2:	97 fb       	bst	r25, 7
+ 8f4:	3e f4       	brtc	.+14     	; 0x904 <__stack+0x5>
+ 8f6:	90 95       	com	r25
+ 8f8:	80 95       	com	r24
+ 8fa:	70 95       	com	r23
+ 8fc:	61 95       	neg	r22
+ 8fe:	7f 4f       	sbci	r23, 0xFF	; 255
+ 900:	8f 4f       	sbci	r24, 0xFF	; 255
+ 902:	9f 4f       	sbci	r25, 0xFF	; 255
+ 904:	99 23       	and	r25, r25
+ 906:	a9 f0       	breq	.+42     	; 0x932 <__stack+0x33>
+ 908:	f9 2f       	mov	r31, r25
+ 90a:	96 e9       	ldi	r25, 0x96	; 150
+ 90c:	bb 27       	eor	r27, r27
+ 90e:	93 95       	inc	r25
+ 910:	f6 95       	lsr	r31
+ 912:	87 95       	ror	r24
+ 914:	77 95       	ror	r23
+ 916:	67 95       	ror	r22
+ 918:	b7 95       	ror	r27
+ 91a:	f1 11       	cpse	r31, r1
+ 91c:	f8 cf       	rjmp	.-16     	; 0x90e <__stack+0xf>
+ 91e:	fa f4       	brpl	.+62     	; 0x95e <__stack+0x5f>
+ 920:	bb 0f       	add	r27, r27
+ 922:	11 f4       	brne	.+4      	; 0x928 <__stack+0x29>
+ 924:	60 ff       	sbrs	r22, 0
+ 926:	1b c0       	rjmp	.+54     	; 0x95e <__stack+0x5f>
+ 928:	6f 5f       	subi	r22, 0xFF	; 255
+ 92a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 92c:	8f 4f       	sbci	r24, 0xFF	; 255
+ 92e:	9f 4f       	sbci	r25, 0xFF	; 255
+ 930:	16 c0       	rjmp	.+44     	; 0x95e <__stack+0x5f>
+ 932:	88 23       	and	r24, r24
+ 934:	11 f0       	breq	.+4      	; 0x93a <__stack+0x3b>
+ 936:	96 e9       	ldi	r25, 0x96	; 150
+ 938:	11 c0       	rjmp	.+34     	; 0x95c <__stack+0x5d>
+ 93a:	77 23       	and	r23, r23
+ 93c:	21 f0       	breq	.+8      	; 0x946 <__stack+0x47>
+ 93e:	9e e8       	ldi	r25, 0x8E	; 142
+ 940:	87 2f       	mov	r24, r23
+ 942:	76 2f       	mov	r23, r22
+ 944:	05 c0       	rjmp	.+10     	; 0x950 <__stack+0x51>
+ 946:	66 23       	and	r22, r22
+ 948:	71 f0       	breq	.+28     	; 0x966 <__stack+0x67>
+ 94a:	96 e8       	ldi	r25, 0x86	; 134
+ 94c:	86 2f       	mov	r24, r22
+ 94e:	70 e0       	ldi	r23, 0x00	; 0
+ 950:	60 e0       	ldi	r22, 0x00	; 0
+ 952:	2a f0       	brmi	.+10     	; 0x95e <__stack+0x5f>
+ 954:	9a 95       	dec	r25
+ 956:	66 0f       	add	r22, r22
+ 958:	77 1f       	adc	r23, r23
+ 95a:	88 1f       	adc	r24, r24
+ 95c:	da f7       	brpl	.-10     	; 0x954 <__stack+0x55>
+ 95e:	88 0f       	add	r24, r24
+ 960:	96 95       	lsr	r25
+ 962:	87 95       	ror	r24
+ 964:	97 f9       	bld	r25, 7
+ 966:	08 95       	ret
 
-0000097a <__fp_cmp>:
+00000968 <__fp_cmp>:
 __fp_cmp():
- 97a:	99 0f       	add	r25, r25
- 97c:	00 08       	sbc	r0, r0
- 97e:	55 0f       	add	r21, r21
- 980:	aa 0b       	sbc	r26, r26
- 982:	e0 e8       	ldi	r30, 0x80	; 128
- 984:	fe ef       	ldi	r31, 0xFE	; 254
- 986:	16 16       	cp	r1, r22
- 988:	17 06       	cpc	r1, r23
- 98a:	e8 07       	cpc	r30, r24
- 98c:	f9 07       	cpc	r31, r25
- 98e:	c0 f0       	brcs	.+48     	; 0x9c0 <__fp_cmp+0x46>
- 990:	12 16       	cp	r1, r18
- 992:	13 06       	cpc	r1, r19
- 994:	e4 07       	cpc	r30, r20
- 996:	f5 07       	cpc	r31, r21
- 998:	98 f0       	brcs	.+38     	; 0x9c0 <__fp_cmp+0x46>
- 99a:	62 1b       	sub	r22, r18
- 99c:	73 0b       	sbc	r23, r19
- 99e:	84 0b       	sbc	r24, r20
- 9a0:	95 0b       	sbc	r25, r21
- 9a2:	39 f4       	brne	.+14     	; 0x9b2 <__fp_cmp+0x38>
- 9a4:	0a 26       	eor	r0, r26
- 9a6:	61 f0       	breq	.+24     	; 0x9c0 <__fp_cmp+0x46>
- 9a8:	23 2b       	or	r18, r19
- 9aa:	24 2b       	or	r18, r20
- 9ac:	25 2b       	or	r18, r21
- 9ae:	21 f4       	brne	.+8      	; 0x9b8 <__fp_cmp+0x3e>
- 9b0:	08 95       	ret
- 9b2:	0a 26       	eor	r0, r26
- 9b4:	09 f4       	brne	.+2      	; 0x9b8 <__fp_cmp+0x3e>
- 9b6:	a1 40       	sbci	r26, 0x01	; 1
- 9b8:	a6 95       	lsr	r26
- 9ba:	8f ef       	ldi	r24, 0xFF	; 255
- 9bc:	81 1d       	adc	r24, r1
- 9be:	81 1d       	adc	r24, r1
+ 968:	99 0f       	add	r25, r25
+ 96a:	00 08       	sbc	r0, r0
+ 96c:	55 0f       	add	r21, r21
+ 96e:	aa 0b       	sbc	r26, r26
+ 970:	e0 e8       	ldi	r30, 0x80	; 128
+ 972:	fe ef       	ldi	r31, 0xFE	; 254
+ 974:	16 16       	cp	r1, r22
+ 976:	17 06       	cpc	r1, r23
+ 978:	e8 07       	cpc	r30, r24
+ 97a:	f9 07       	cpc	r31, r25
+ 97c:	c0 f0       	brcs	.+48     	; 0x9ae <__fp_cmp+0x46>
+ 97e:	12 16       	cp	r1, r18
+ 980:	13 06       	cpc	r1, r19
+ 982:	e4 07       	cpc	r30, r20
+ 984:	f5 07       	cpc	r31, r21
+ 986:	98 f0       	brcs	.+38     	; 0x9ae <__fp_cmp+0x46>
+ 988:	62 1b       	sub	r22, r18
+ 98a:	73 0b       	sbc	r23, r19
+ 98c:	84 0b       	sbc	r24, r20
+ 98e:	95 0b       	sbc	r25, r21
+ 990:	39 f4       	brne	.+14     	; 0x9a0 <__fp_cmp+0x38>
+ 992:	0a 26       	eor	r0, r26
+ 994:	61 f0       	breq	.+24     	; 0x9ae <__fp_cmp+0x46>
+ 996:	23 2b       	or	r18, r19
+ 998:	24 2b       	or	r18, r20
+ 99a:	25 2b       	or	r18, r21
+ 99c:	21 f4       	brne	.+8      	; 0x9a6 <__fp_cmp+0x3e>
+ 99e:	08 95       	ret
+ 9a0:	0a 26       	eor	r0, r26
+ 9a2:	09 f4       	brne	.+2      	; 0x9a6 <__fp_cmp+0x3e>
+ 9a4:	a1 40       	sbci	r26, 0x01	; 1
+ 9a6:	a6 95       	lsr	r26
+ 9a8:	8f ef       	ldi	r24, 0xFF	; 255
+ 9aa:	81 1d       	adc	r24, r1
+ 9ac:	81 1d       	adc	r24, r1
+ 9ae:	08 95       	ret
+
+000009b0 <__fp_inf>:
+__fp_inf():
+ 9b0:	97 f9       	bld	r25, 7
+ 9b2:	9f 67       	ori	r25, 0x7F	; 127
+ 9b4:	80 e8       	ldi	r24, 0x80	; 128
+ 9b6:	70 e0       	ldi	r23, 0x00	; 0
+ 9b8:	60 e0       	ldi	r22, 0x00	; 0
+ 9ba:	08 95       	ret
+
+000009bc <__fp_nan>:
+__fp_nan():
+ 9bc:	9f ef       	ldi	r25, 0xFF	; 255
+ 9be:	80 ec       	ldi	r24, 0xC0	; 192
  9c0:	08 95       	ret
 
-000009c2 <__fp_inf>:
-__fp_inf():
- 9c2:	97 f9       	bld	r25, 7
- 9c4:	9f 67       	ori	r25, 0x7F	; 127
- 9c6:	80 e8       	ldi	r24, 0x80	; 128
- 9c8:	70 e0       	ldi	r23, 0x00	; 0
- 9ca:	60 e0       	ldi	r22, 0x00	; 0
- 9cc:	08 95       	ret
-
-000009ce <__fp_nan>:
-__fp_nan():
- 9ce:	9f ef       	ldi	r25, 0xFF	; 255
- 9d0:	80 ec       	ldi	r24, 0xC0	; 192
- 9d2:	08 95       	ret
-
-000009d4 <__fp_pscA>:
+000009c2 <__fp_pscA>:
 __fp_pscA():
- 9d4:	00 24       	eor	r0, r0
- 9d6:	0a 94       	dec	r0
- 9d8:	16 16       	cp	r1, r22
- 9da:	17 06       	cpc	r1, r23
- 9dc:	18 06       	cpc	r1, r24
- 9de:	09 06       	cpc	r0, r25
- 9e0:	08 95       	ret
+ 9c2:	00 24       	eor	r0, r0
+ 9c4:	0a 94       	dec	r0
+ 9c6:	16 16       	cp	r1, r22
+ 9c8:	17 06       	cpc	r1, r23
+ 9ca:	18 06       	cpc	r1, r24
+ 9cc:	09 06       	cpc	r0, r25
+ 9ce:	08 95       	ret
 
-000009e2 <__fp_pscB>:
+000009d0 <__fp_pscB>:
 __fp_pscB():
- 9e2:	00 24       	eor	r0, r0
- 9e4:	0a 94       	dec	r0
- 9e6:	12 16       	cp	r1, r18
- 9e8:	13 06       	cpc	r1, r19
- 9ea:	14 06       	cpc	r1, r20
- 9ec:	05 06       	cpc	r0, r21
- 9ee:	08 95       	ret
+ 9d0:	00 24       	eor	r0, r0
+ 9d2:	0a 94       	dec	r0
+ 9d4:	12 16       	cp	r1, r18
+ 9d6:	13 06       	cpc	r1, r19
+ 9d8:	14 06       	cpc	r1, r20
+ 9da:	05 06       	cpc	r0, r21
+ 9dc:	08 95       	ret
 
-000009f0 <__fp_round>:
+000009de <__fp_round>:
 __fp_round():
- 9f0:	09 2e       	mov	r0, r25
- 9f2:	03 94       	inc	r0
- 9f4:	00 0c       	add	r0, r0
- 9f6:	11 f4       	brne	.+4      	; 0x9fc <__fp_round+0xc>
- 9f8:	88 23       	and	r24, r24
- 9fa:	52 f0       	brmi	.+20     	; 0xa10 <__fp_round+0x20>
- 9fc:	bb 0f       	add	r27, r27
- 9fe:	40 f4       	brcc	.+16     	; 0xa10 <__fp_round+0x20>
- a00:	bf 2b       	or	r27, r31
- a02:	11 f4       	brne	.+4      	; 0xa08 <__fp_round+0x18>
- a04:	60 ff       	sbrs	r22, 0
- a06:	04 c0       	rjmp	.+8      	; 0xa10 <__fp_round+0x20>
- a08:	6f 5f       	subi	r22, 0xFF	; 255
- a0a:	7f 4f       	sbci	r23, 0xFF	; 255
- a0c:	8f 4f       	sbci	r24, 0xFF	; 255
- a0e:	9f 4f       	sbci	r25, 0xFF	; 255
- a10:	08 95       	ret
+ 9de:	09 2e       	mov	r0, r25
+ 9e0:	03 94       	inc	r0
+ 9e2:	00 0c       	add	r0, r0
+ 9e4:	11 f4       	brne	.+4      	; 0x9ea <__fp_round+0xc>
+ 9e6:	88 23       	and	r24, r24
+ 9e8:	52 f0       	brmi	.+20     	; 0x9fe <__fp_round+0x20>
+ 9ea:	bb 0f       	add	r27, r27
+ 9ec:	40 f4       	brcc	.+16     	; 0x9fe <__fp_round+0x20>
+ 9ee:	bf 2b       	or	r27, r31
+ 9f0:	11 f4       	brne	.+4      	; 0x9f6 <__fp_round+0x18>
+ 9f2:	60 ff       	sbrs	r22, 0
+ 9f4:	04 c0       	rjmp	.+8      	; 0x9fe <__fp_round+0x20>
+ 9f6:	6f 5f       	subi	r22, 0xFF	; 255
+ 9f8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 9fa:	8f 4f       	sbci	r24, 0xFF	; 255
+ 9fc:	9f 4f       	sbci	r25, 0xFF	; 255
+ 9fe:	08 95       	ret
 
-00000a12 <__fp_split3>:
+00000a00 <__fp_split3>:
 __fp_split3():
- a12:	57 fd       	sbrc	r21, 7
- a14:	90 58       	subi	r25, 0x80	; 128
- a16:	44 0f       	add	r20, r20
- a18:	55 1f       	adc	r21, r21
- a1a:	59 f0       	breq	.+22     	; 0xa32 <__fp_splitA+0x10>
- a1c:	5f 3f       	cpi	r21, 0xFF	; 255
- a1e:	71 f0       	breq	.+28     	; 0xa3c <__fp_splitA+0x1a>
- a20:	47 95       	ror	r20
+ a00:	57 fd       	sbrc	r21, 7
+ a02:	90 58       	subi	r25, 0x80	; 128
+ a04:	44 0f       	add	r20, r20
+ a06:	55 1f       	adc	r21, r21
+ a08:	59 f0       	breq	.+22     	; 0xa20 <__fp_splitA+0x10>
+ a0a:	5f 3f       	cpi	r21, 0xFF	; 255
+ a0c:	71 f0       	breq	.+28     	; 0xa2a <__fp_splitA+0x1a>
+ a0e:	47 95       	ror	r20
 
-00000a22 <__fp_splitA>:
- a22:	88 0f       	add	r24, r24
- a24:	97 fb       	bst	r25, 7
- a26:	99 1f       	adc	r25, r25
- a28:	61 f0       	breq	.+24     	; 0xa42 <__fp_splitA+0x20>
- a2a:	9f 3f       	cpi	r25, 0xFF	; 255
- a2c:	79 f0       	breq	.+30     	; 0xa4c <__fp_splitA+0x2a>
- a2e:	87 95       	ror	r24
- a30:	08 95       	ret
- a32:	12 16       	cp	r1, r18
- a34:	13 06       	cpc	r1, r19
- a36:	14 06       	cpc	r1, r20
- a38:	55 1f       	adc	r21, r21
- a3a:	f2 cf       	rjmp	.-28     	; 0xa20 <__fp_split3+0xe>
- a3c:	46 95       	lsr	r20
- a3e:	f1 df       	rcall	.-30     	; 0xa22 <__fp_splitA>
- a40:	08 c0       	rjmp	.+16     	; 0xa52 <__fp_splitA+0x30>
- a42:	16 16       	cp	r1, r22
- a44:	17 06       	cpc	r1, r23
- a46:	18 06       	cpc	r1, r24
- a48:	99 1f       	adc	r25, r25
- a4a:	f1 cf       	rjmp	.-30     	; 0xa2e <__fp_splitA+0xc>
- a4c:	86 95       	lsr	r24
- a4e:	71 05       	cpc	r23, r1
- a50:	61 05       	cpc	r22, r1
- a52:	08 94       	sec
- a54:	08 95       	ret
+00000a10 <__fp_splitA>:
+ a10:	88 0f       	add	r24, r24
+ a12:	97 fb       	bst	r25, 7
+ a14:	99 1f       	adc	r25, r25
+ a16:	61 f0       	breq	.+24     	; 0xa30 <__fp_splitA+0x20>
+ a18:	9f 3f       	cpi	r25, 0xFF	; 255
+ a1a:	79 f0       	breq	.+30     	; 0xa3a <__fp_splitA+0x2a>
+ a1c:	87 95       	ror	r24
+ a1e:	08 95       	ret
+ a20:	12 16       	cp	r1, r18
+ a22:	13 06       	cpc	r1, r19
+ a24:	14 06       	cpc	r1, r20
+ a26:	55 1f       	adc	r21, r21
+ a28:	f2 cf       	rjmp	.-28     	; 0xa0e <__fp_split3+0xe>
+ a2a:	46 95       	lsr	r20
+ a2c:	f1 df       	rcall	.-30     	; 0xa10 <__fp_splitA>
+ a2e:	08 c0       	rjmp	.+16     	; 0xa40 <__fp_splitA+0x30>
+ a30:	16 16       	cp	r1, r22
+ a32:	17 06       	cpc	r1, r23
+ a34:	18 06       	cpc	r1, r24
+ a36:	99 1f       	adc	r25, r25
+ a38:	f1 cf       	rjmp	.-30     	; 0xa1c <__fp_splitA+0xc>
+ a3a:	86 95       	lsr	r24
+ a3c:	71 05       	cpc	r23, r1
+ a3e:	61 05       	cpc	r22, r1
+ a40:	08 94       	sec
+ a42:	08 95       	ret
 
-00000a56 <__fp_zero>:
+00000a44 <__fp_zero>:
 __fp_zero():
- a56:	e8 94       	clt
+ a44:	e8 94       	clt
 
-00000a58 <__fp_szero>:
- a58:	bb 27       	eor	r27, r27
- a5a:	66 27       	eor	r22, r22
- a5c:	77 27       	eor	r23, r23
- a5e:	cb 01       	movw	r24, r22
- a60:	97 f9       	bld	r25, 7
- a62:	08 95       	ret
+00000a46 <__fp_szero>:
+ a46:	bb 27       	eor	r27, r27
+ a48:	66 27       	eor	r22, r22
+ a4a:	77 27       	eor	r23, r23
+ a4c:	cb 01       	movw	r24, r22
+ a4e:	97 f9       	bld	r25, 7
+ a50:	08 95       	ret
 
-00000a64 <__gesf2>:
+00000a52 <__gesf2>:
 __gesf2():
- a64:	0e 94 bd 04 	call	0x97a	; 0x97a <__fp_cmp>
- a68:	08 f4       	brcc	.+2      	; 0xa6c <__gesf2+0x8>
- a6a:	8f ef       	ldi	r24, 0xFF	; 255
- a6c:	08 95       	ret
+ a52:	0e 94 b4 04 	call	0x968	; 0x968 <__fp_cmp>
+ a56:	08 f4       	brcc	.+2      	; 0xa5a <__gesf2+0x8>
+ a58:	8f ef       	ldi	r24, 0xFF	; 255
+ a5a:	08 95       	ret
 
-00000a6e <__mulsf3>:
+00000a5c <__mulsf3>:
 __mulsf3():
- a6e:	0e 94 4a 05 	call	0xa94	; 0xa94 <__mulsf3x>
- a72:	0c 94 f8 04 	jmp	0x9f0	; 0x9f0 <__fp_round>
- a76:	0e 94 ea 04 	call	0x9d4	; 0x9d4 <__fp_pscA>
- a7a:	38 f0       	brcs	.+14     	; 0xa8a <__mulsf3+0x1c>
- a7c:	0e 94 f1 04 	call	0x9e2	; 0x9e2 <__fp_pscB>
- a80:	20 f0       	brcs	.+8      	; 0xa8a <__mulsf3+0x1c>
- a82:	95 23       	and	r25, r21
- a84:	11 f0       	breq	.+4      	; 0xa8a <__mulsf3+0x1c>
- a86:	0c 94 e1 04 	jmp	0x9c2	; 0x9c2 <__fp_inf>
- a8a:	0c 94 e7 04 	jmp	0x9ce	; 0x9ce <__fp_nan>
- a8e:	11 24       	eor	r1, r1
- a90:	0c 94 2c 05 	jmp	0xa58	; 0xa58 <__fp_szero>
+ a5c:	0e 94 41 05 	call	0xa82	; 0xa82 <__mulsf3x>
+ a60:	0c 94 ef 04 	jmp	0x9de	; 0x9de <__fp_round>
+ a64:	0e 94 e1 04 	call	0x9c2	; 0x9c2 <__fp_pscA>
+ a68:	38 f0       	brcs	.+14     	; 0xa78 <__mulsf3+0x1c>
+ a6a:	0e 94 e8 04 	call	0x9d0	; 0x9d0 <__fp_pscB>
+ a6e:	20 f0       	brcs	.+8      	; 0xa78 <__mulsf3+0x1c>
+ a70:	95 23       	and	r25, r21
+ a72:	11 f0       	breq	.+4      	; 0xa78 <__mulsf3+0x1c>
+ a74:	0c 94 d8 04 	jmp	0x9b0	; 0x9b0 <__fp_inf>
+ a78:	0c 94 de 04 	jmp	0x9bc	; 0x9bc <__fp_nan>
+ a7c:	11 24       	eor	r1, r1
+ a7e:	0c 94 23 05 	jmp	0xa46	; 0xa46 <__fp_szero>
 
-00000a94 <__mulsf3x>:
+00000a82 <__mulsf3x>:
 __mulsf3x():
- a94:	0e 94 09 05 	call	0xa12	; 0xa12 <__fp_split3>
- a98:	70 f3       	brcs	.-36     	; 0xa76 <__mulsf3+0x8>
+ a82:	0e 94 00 05 	call	0xa00	; 0xa00 <__fp_split3>
+ a86:	70 f3       	brcs	.-36     	; 0xa64 <__mulsf3+0x8>
 
-00000a9a <__mulsf3_pse>:
- a9a:	95 9f       	mul	r25, r21
- a9c:	c1 f3       	breq	.-16     	; 0xa8e <__mulsf3+0x20>
- a9e:	95 0f       	add	r25, r21
- aa0:	50 e0       	ldi	r21, 0x00	; 0
- aa2:	55 1f       	adc	r21, r21
- aa4:	62 9f       	mul	r22, r18
- aa6:	f0 01       	movw	r30, r0
- aa8:	72 9f       	mul	r23, r18
- aaa:	bb 27       	eor	r27, r27
- aac:	f0 0d       	add	r31, r0
- aae:	b1 1d       	adc	r27, r1
- ab0:	63 9f       	mul	r22, r19
- ab2:	aa 27       	eor	r26, r26
- ab4:	f0 0d       	add	r31, r0
- ab6:	b1 1d       	adc	r27, r1
- ab8:	aa 1f       	adc	r26, r26
- aba:	64 9f       	mul	r22, r20
- abc:	66 27       	eor	r22, r22
+00000a88 <__mulsf3_pse>:
+ a88:	95 9f       	mul	r25, r21
+ a8a:	c1 f3       	breq	.-16     	; 0xa7c <__mulsf3+0x20>
+ a8c:	95 0f       	add	r25, r21
+ a8e:	50 e0       	ldi	r21, 0x00	; 0
+ a90:	55 1f       	adc	r21, r21
+ a92:	62 9f       	mul	r22, r18
+ a94:	f0 01       	movw	r30, r0
+ a96:	72 9f       	mul	r23, r18
+ a98:	bb 27       	eor	r27, r27
+ a9a:	f0 0d       	add	r31, r0
+ a9c:	b1 1d       	adc	r27, r1
+ a9e:	63 9f       	mul	r22, r19
+ aa0:	aa 27       	eor	r26, r26
+ aa2:	f0 0d       	add	r31, r0
+ aa4:	b1 1d       	adc	r27, r1
+ aa6:	aa 1f       	adc	r26, r26
+ aa8:	64 9f       	mul	r22, r20
+ aaa:	66 27       	eor	r22, r22
+ aac:	b0 0d       	add	r27, r0
+ aae:	a1 1d       	adc	r26, r1
+ ab0:	66 1f       	adc	r22, r22
+ ab2:	82 9f       	mul	r24, r18
+ ab4:	22 27       	eor	r18, r18
+ ab6:	b0 0d       	add	r27, r0
+ ab8:	a1 1d       	adc	r26, r1
+ aba:	62 1f       	adc	r22, r18
+ abc:	73 9f       	mul	r23, r19
  abe:	b0 0d       	add	r27, r0
  ac0:	a1 1d       	adc	r26, r1
- ac2:	66 1f       	adc	r22, r22
- ac4:	82 9f       	mul	r24, r18
- ac6:	22 27       	eor	r18, r18
- ac8:	b0 0d       	add	r27, r0
- aca:	a1 1d       	adc	r26, r1
- acc:	62 1f       	adc	r22, r18
- ace:	73 9f       	mul	r23, r19
- ad0:	b0 0d       	add	r27, r0
- ad2:	a1 1d       	adc	r26, r1
- ad4:	62 1f       	adc	r22, r18
- ad6:	83 9f       	mul	r24, r19
- ad8:	a0 0d       	add	r26, r0
- ada:	61 1d       	adc	r22, r1
- adc:	22 1f       	adc	r18, r18
- ade:	74 9f       	mul	r23, r20
- ae0:	33 27       	eor	r19, r19
- ae2:	a0 0d       	add	r26, r0
- ae4:	61 1d       	adc	r22, r1
- ae6:	23 1f       	adc	r18, r19
- ae8:	84 9f       	mul	r24, r20
- aea:	60 0d       	add	r22, r0
- aec:	21 1d       	adc	r18, r1
- aee:	82 2f       	mov	r24, r18
- af0:	76 2f       	mov	r23, r22
- af2:	6a 2f       	mov	r22, r26
- af4:	11 24       	eor	r1, r1
- af6:	9f 57       	subi	r25, 0x7F	; 127
- af8:	50 40       	sbci	r21, 0x00	; 0
- afa:	9a f0       	brmi	.+38     	; 0xb22 <__mulsf3_pse+0x88>
- afc:	f1 f0       	breq	.+60     	; 0xb3a <__mulsf3_pse+0xa0>
- afe:	88 23       	and	r24, r24
- b00:	4a f0       	brmi	.+18     	; 0xb14 <__mulsf3_pse+0x7a>
- b02:	ee 0f       	add	r30, r30
- b04:	ff 1f       	adc	r31, r31
- b06:	bb 1f       	adc	r27, r27
- b08:	66 1f       	adc	r22, r22
- b0a:	77 1f       	adc	r23, r23
- b0c:	88 1f       	adc	r24, r24
- b0e:	91 50       	subi	r25, 0x01	; 1
- b10:	50 40       	sbci	r21, 0x00	; 0
- b12:	a9 f7       	brne	.-22     	; 0xafe <__mulsf3_pse+0x64>
- b14:	9e 3f       	cpi	r25, 0xFE	; 254
- b16:	51 05       	cpc	r21, r1
- b18:	80 f0       	brcs	.+32     	; 0xb3a <__mulsf3_pse+0xa0>
- b1a:	0c 94 e1 04 	jmp	0x9c2	; 0x9c2 <__fp_inf>
- b1e:	0c 94 2c 05 	jmp	0xa58	; 0xa58 <__fp_szero>
- b22:	5f 3f       	cpi	r21, 0xFF	; 255
- b24:	e4 f3       	brlt	.-8      	; 0xb1e <__mulsf3_pse+0x84>
- b26:	98 3e       	cpi	r25, 0xE8	; 232
- b28:	d4 f3       	brlt	.-12     	; 0xb1e <__mulsf3_pse+0x84>
- b2a:	86 95       	lsr	r24
- b2c:	77 95       	ror	r23
- b2e:	67 95       	ror	r22
- b30:	b7 95       	ror	r27
- b32:	f7 95       	ror	r31
- b34:	e7 95       	ror	r30
- b36:	9f 5f       	subi	r25, 0xFF	; 255
- b38:	c1 f7       	brne	.-16     	; 0xb2a <__mulsf3_pse+0x90>
- b3a:	fe 2b       	or	r31, r30
- b3c:	88 0f       	add	r24, r24
- b3e:	91 1d       	adc	r25, r1
- b40:	96 95       	lsr	r25
- b42:	87 95       	ror	r24
- b44:	97 f9       	bld	r25, 7
- b46:	08 95       	ret
+ ac2:	62 1f       	adc	r22, r18
+ ac4:	83 9f       	mul	r24, r19
+ ac6:	a0 0d       	add	r26, r0
+ ac8:	61 1d       	adc	r22, r1
+ aca:	22 1f       	adc	r18, r18
+ acc:	74 9f       	mul	r23, r20
+ ace:	33 27       	eor	r19, r19
+ ad0:	a0 0d       	add	r26, r0
+ ad2:	61 1d       	adc	r22, r1
+ ad4:	23 1f       	adc	r18, r19
+ ad6:	84 9f       	mul	r24, r20
+ ad8:	60 0d       	add	r22, r0
+ ada:	21 1d       	adc	r18, r1
+ adc:	82 2f       	mov	r24, r18
+ ade:	76 2f       	mov	r23, r22
+ ae0:	6a 2f       	mov	r22, r26
+ ae2:	11 24       	eor	r1, r1
+ ae4:	9f 57       	subi	r25, 0x7F	; 127
+ ae6:	50 40       	sbci	r21, 0x00	; 0
+ ae8:	9a f0       	brmi	.+38     	; 0xb10 <__mulsf3_pse+0x88>
+ aea:	f1 f0       	breq	.+60     	; 0xb28 <__mulsf3_pse+0xa0>
+ aec:	88 23       	and	r24, r24
+ aee:	4a f0       	brmi	.+18     	; 0xb02 <__mulsf3_pse+0x7a>
+ af0:	ee 0f       	add	r30, r30
+ af2:	ff 1f       	adc	r31, r31
+ af4:	bb 1f       	adc	r27, r27
+ af6:	66 1f       	adc	r22, r22
+ af8:	77 1f       	adc	r23, r23
+ afa:	88 1f       	adc	r24, r24
+ afc:	91 50       	subi	r25, 0x01	; 1
+ afe:	50 40       	sbci	r21, 0x00	; 0
+ b00:	a9 f7       	brne	.-22     	; 0xaec <__mulsf3_pse+0x64>
+ b02:	9e 3f       	cpi	r25, 0xFE	; 254
+ b04:	51 05       	cpc	r21, r1
+ b06:	80 f0       	brcs	.+32     	; 0xb28 <__mulsf3_pse+0xa0>
+ b08:	0c 94 d8 04 	jmp	0x9b0	; 0x9b0 <__fp_inf>
+ b0c:	0c 94 23 05 	jmp	0xa46	; 0xa46 <__fp_szero>
+ b10:	5f 3f       	cpi	r21, 0xFF	; 255
+ b12:	e4 f3       	brlt	.-8      	; 0xb0c <__mulsf3_pse+0x84>
+ b14:	98 3e       	cpi	r25, 0xE8	; 232
+ b16:	d4 f3       	brlt	.-12     	; 0xb0c <__mulsf3_pse+0x84>
+ b18:	86 95       	lsr	r24
+ b1a:	77 95       	ror	r23
+ b1c:	67 95       	ror	r22
+ b1e:	b7 95       	ror	r27
+ b20:	f7 95       	ror	r31
+ b22:	e7 95       	ror	r30
+ b24:	9f 5f       	subi	r25, 0xFF	; 255
+ b26:	c1 f7       	brne	.-16     	; 0xb18 <__mulsf3_pse+0x90>
+ b28:	fe 2b       	or	r31, r30
+ b2a:	88 0f       	add	r24, r24
+ b2c:	91 1d       	adc	r25, r1
+ b2e:	96 95       	lsr	r25
+ b30:	87 95       	ror	r24
+ b32:	97 f9       	bld	r25, 7
+ b34:	08 95       	ret
 
-00000b48 <__divmodsi4>:
+00000b36 <__divmodsi4>:
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1686
- b48:	05 2e       	mov	r0, r21
+ b36:	05 2e       	mov	r0, r21
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1687
- b4a:	97 fb       	bst	r25, 7
+ b38:	97 fb       	bst	r25, 7
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1688
- b4c:	1e f4       	brtc	.+6      	; 0xb54 <__divmodsi4+0xc>
+ b3a:	1e f4       	brtc	.+6      	; 0xb42 <__divmodsi4+0xc>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1689
- b4e:	00 94       	com	r0
+ b3c:	00 94       	com	r0
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1690
- b50:	0e 94 bb 05 	call	0xb76	; 0xb76 <__negsi2>
+ b3e:	0e 94 b2 05 	call	0xb64	; 0xb64 <__negsi2>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1692
- b54:	57 fd       	sbrc	r21, 7
+ b42:	57 fd       	sbrc	r21, 7
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1693
- b56:	07 d0       	rcall	.+14     	; 0xb66 <__divmodsi4_neg2>
+ b44:	07 d0       	rcall	.+14     	; 0xb54 <__divmodsi4_neg2>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1694
- b58:	0e 94 c3 05 	call	0xb86	; 0xb86 <__udivmodsi4>
+ b46:	0e 94 ba 05 	call	0xb74	; 0xb74 <__udivmodsi4>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1695
- b5c:	07 fc       	sbrc	r0, 7
+ b4a:	07 fc       	sbrc	r0, 7
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1696
- b5e:	03 d0       	rcall	.+6      	; 0xb66 <__divmodsi4_neg2>
+ b4c:	03 d0       	rcall	.+6      	; 0xb54 <__divmodsi4_neg2>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1697
- b60:	4e f4       	brtc	.+18     	; 0xb74 <__divmodsi4_exit>
+ b4e:	4e f4       	brtc	.+18     	; 0xb62 <__divmodsi4_exit>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1698
- b62:	0c 94 bb 05 	jmp	0xb76	; 0xb76 <__negsi2>
+ b50:	0c 94 b2 05 	jmp	0xb64	; 0xb64 <__negsi2>
 
-00000b66 <__divmodsi4_neg2>:
+00000b54 <__divmodsi4_neg2>:
 __divmodsi4_neg2():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1701
- b66:	50 95       	com	r21
+ b54:	50 95       	com	r21
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1702
- b68:	40 95       	com	r20
+ b56:	40 95       	com	r20
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1703
- b6a:	30 95       	com	r19
+ b58:	30 95       	com	r19
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1704
- b6c:	21 95       	neg	r18
+ b5a:	21 95       	neg	r18
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1705
- b6e:	3f 4f       	sbci	r19, 0xFF	; 255
+ b5c:	3f 4f       	sbci	r19, 0xFF	; 255
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1706
- b70:	4f 4f       	sbci	r20, 0xFF	; 255
+ b5e:	4f 4f       	sbci	r20, 0xFF	; 255
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1707
- b72:	5f 4f       	sbci	r21, 0xFF	; 255
+ b60:	5f 4f       	sbci	r21, 0xFF	; 255
 
-00000b74 <__divmodsi4_exit>:
+00000b62 <__divmodsi4_exit>:
 __divmodsi4_exit():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1709
- b74:	08 95       	ret
+ b62:	08 95       	ret
 
-00000b76 <__negsi2>:
+00000b64 <__negsi2>:
 __negsi2():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1718
- b76:	90 95       	com	r25
- b78:	80 95       	com	r24
- b7a:	70 95       	com	r23
- b7c:	61 95       	neg	r22
- b7e:	7f 4f       	sbci	r23, 0xFF	; 255
- b80:	8f 4f       	sbci	r24, 0xFF	; 255
- b82:	9f 4f       	sbci	r25, 0xFF	; 255
+ b64:	90 95       	com	r25
+ b66:	80 95       	com	r24
+ b68:	70 95       	com	r23
+ b6a:	61 95       	neg	r22
+ b6c:	7f 4f       	sbci	r23, 0xFF	; 255
+ b6e:	8f 4f       	sbci	r24, 0xFF	; 255
+ b70:	9f 4f       	sbci	r25, 0xFF	; 255
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1719
- b84:	08 95       	ret
+ b72:	08 95       	ret
 
-00000b86 <__udivmodsi4>:
+00000b74 <__udivmodsi4>:
 __udivmodsi4():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
- b86:	a1 e2       	ldi	r26, 0x21	; 33
+ b74:	a1 e2       	ldi	r26, 0x21	; 33
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1639
- b88:	1a 2e       	mov	r1, r26
+ b76:	1a 2e       	mov	r1, r26
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1640
- b8a:	aa 1b       	sub	r26, r26
+ b78:	aa 1b       	sub	r26, r26
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1641
- b8c:	bb 1b       	sub	r27, r27
+ b7a:	bb 1b       	sub	r27, r27
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1642
- b8e:	fd 01       	movw	r30, r26
+ b7c:	fd 01       	movw	r30, r26
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1644
- b90:	0d c0       	rjmp	.+26     	; 0xbac <__udivmodsi4_ep>
+ b7e:	0d c0       	rjmp	.+26     	; 0xb9a <__udivmodsi4_ep>
 
-00000b92 <__udivmodsi4_loop>:
+00000b80 <__udivmodsi4_loop>:
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
- b92:	aa 1f       	adc	r26, r26
+ b80:	aa 1f       	adc	r26, r26
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1647
- b94:	bb 1f       	adc	r27, r27
+ b82:	bb 1f       	adc	r27, r27
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1648
- b96:	ee 1f       	adc	r30, r30
+ b84:	ee 1f       	adc	r30, r30
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1649
- b98:	ff 1f       	adc	r31, r31
+ b86:	ff 1f       	adc	r31, r31
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1650
- b9a:	a2 17       	cp	r26, r18
+ b88:	a2 17       	cp	r26, r18
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1651
- b9c:	b3 07       	cpc	r27, r19
+ b8a:	b3 07       	cpc	r27, r19
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1652
- b9e:	e4 07       	cpc	r30, r20
+ b8c:	e4 07       	cpc	r30, r20
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1653
- ba0:	f5 07       	cpc	r31, r21
+ b8e:	f5 07       	cpc	r31, r21
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1654
- ba2:	20 f0       	brcs	.+8      	; 0xbac <__udivmodsi4_ep>
+ b90:	20 f0       	brcs	.+8      	; 0xb9a <__udivmodsi4_ep>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1655
- ba4:	a2 1b       	sub	r26, r18
+ b92:	a2 1b       	sub	r26, r18
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1656
- ba6:	b3 0b       	sbc	r27, r19
+ b94:	b3 0b       	sbc	r27, r19
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1657
- ba8:	e4 0b       	sbc	r30, r20
+ b96:	e4 0b       	sbc	r30, r20
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1658
- baa:	f5 0b       	sbc	r31, r21
+ b98:	f5 0b       	sbc	r31, r21
 
-00000bac <__udivmodsi4_ep>:
+00000b9a <__udivmodsi4_ep>:
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
- bac:	66 1f       	adc	r22, r22
+ b9a:	66 1f       	adc	r22, r22
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1661
- bae:	77 1f       	adc	r23, r23
+ b9c:	77 1f       	adc	r23, r23
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1662
- bb0:	88 1f       	adc	r24, r24
+ b9e:	88 1f       	adc	r24, r24
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1663
- bb2:	99 1f       	adc	r25, r25
+ ba0:	99 1f       	adc	r25, r25
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1664
- bb4:	1a 94       	dec	r1
+ ba2:	1a 94       	dec	r1
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1665
- bb6:	69 f7       	brne	.-38     	; 0xb92 <__udivmodsi4_loop>
+ ba4:	69 f7       	brne	.-38     	; 0xb80 <__udivmodsi4_loop>
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1667
- bb8:	60 95       	com	r22
+ ba6:	60 95       	com	r22
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1668
- bba:	70 95       	com	r23
+ ba8:	70 95       	com	r23
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1669
- bbc:	80 95       	com	r24
+ baa:	80 95       	com	r24
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1670
- bbe:	90 95       	com	r25
+ bac:	90 95       	com	r25
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1672
- bc0:	9b 01       	movw	r18, r22
+ bae:	9b 01       	movw	r18, r22
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1674
- bc2:	ac 01       	movw	r20, r24
+ bb0:	ac 01       	movw	r20, r24
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1676
- bc4:	bd 01       	movw	r22, r26
+ bb2:	bd 01       	movw	r22, r26
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1678
- bc6:	cf 01       	movw	r24, r30
+ bb4:	cf 01       	movw	r24, r30
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1680
- bc8:	08 95       	ret
+ bb6:	08 95       	ret
 
-00000bca <_exit>:
+00000bb8 <_exit>:
 exit():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
- bca:	f8 94       	cli
+ bb8:	f8 94       	cli
 
-00000bcc <__stop_program>:
+00000bba <__stop_program>:
 __stop_program():
 /home/jenkins/workspace/avr-gcc-staging/label/debian7-x86_64/gcc-build/avr/avr5/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
- bcc:	ff cf       	rjmp	.-2      	; 0xbcc <__stop_program>
+ bba:	ff cf       	rjmp	.-2      	; 0xbba <__stop_program>
