@@ -15,12 +15,13 @@ int czujniki[] = {A0, A1, A2, A3, A4};
 // 0.05 - ok
 // 0.12 - ok, podobno dobre
 // 0.20 - testing, troche oscyluje na zakretach
-float Kp = 0.12;
+float Kp = 0.10;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
-// 1.0 - testing
-float Kd = 1.0;
+// 0.75 - testing
+// 1.0 - za dużo
+float Kd = 0.75;
 
 // --- ZMIENNE POMOCNICZE ---
 int blad = 0;
@@ -54,10 +55,10 @@ void setup() {
 void loop() {
   int pozycja = oblicz_pozycje();
 
-  if (pozycja == 10000) {
-    szukaj_linii();
-    return;
-  }
+  // if (pozycja == 10000) {
+  //   szukaj_linii();
+  //   return;
+  // }
 
   blad = pozycja;
   // test start
@@ -116,7 +117,13 @@ int oblicz_pozycje() {
     }
   }
 
-  if (aktywnych == 0) return 10000;
+  // if (aktywnych == 0) return 10000;
+  if (aktywnych == 0) {
+    // Zamiast zwracać 10000, dajemy maksymalny możliwy błąd z "plusem" lub "minusem",
+    // aby PID sam agresywnie, ale płynnie skręcił i użył dynamicznego hamowania.
+    if (ostatni_kierunek == 1) return 3000; 
+    else return -3000;
+  }
 
   int pozycja = suma_wag / aktywnych;
 
@@ -126,10 +133,10 @@ int oblicz_pozycje() {
   return pozycja;
 }
 
-void szukaj_linii() {
-  if (ostatni_kierunek == -1) move(-80, 80); 
-  else move(80, -80);
-}
+// void szukaj_linii() {
+//   if (ostatni_kierunek == -1) move(-80, 80); 
+//   else move(80, -80);
+// }
 
 void move(int ml, int mp) {
   ml = constrain(ml, -255, 255);
