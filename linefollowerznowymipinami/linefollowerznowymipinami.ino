@@ -1,27 +1,24 @@
-// --- PINY BEZ ZMIAN ---
 int m_prawy_A = 8; int m_prawy_B = 9;
-int m_lewy_A = 2; int m_lewy_B = 3; // poprawka pinów
+int m_lewy_A = 2; int m_lewy_B = 3;
 int en_prawy = 5;  int en_lewy = 6;
 
 int czujniki[] = {A0, A1, A2, A3, A4};
 
-// --- NASTAWY PID ---
+// --- NASTAWY PID --- podstawowe
 // float Kp = 0.15;
 // float Ki = 0.001;
 // float Kd = 0.8;
 
-// jacob - tymczasowe NASTAWY PID
 // KP
-// 0.06 - TESTING
+// 0.06 - Super, zostawiam
 // 0.07 - ok, Jest super ale troszke oscyluje
 // 0.08 - ok, JEST SUPER ale troszke oscyluje
 // 0.12 - ok, troche za bardzo oscyluje
-// 0.20 - testing, troche oscyluje na zakretach
 float Kp = 0.06;
 float Ki = 0.0;
 // Kd
 // 0.5 - ok ale troche przestrzela
-// 0.75 - testing
+// 0.75 - Super
 // 1.0 - za dużo
 float Kd = 0.75;
 
@@ -32,8 +29,8 @@ float calka = 0;
 
 // V_BAZA ( domyslenie 180 , zasieg od 0 do 255)
 // 150 - super
-// 200 - super, próbuje ponownie aby miał zapas mocy na przyspieszanie
-// 250 - super
+// 200 - super, 
+// 250 - super, zostawian bo to jest kontrolowane przez funkcje dynamiczne skrecanie
 int V_BAZA = 250;
 int ostatni_kierunek = 0;
 
@@ -41,7 +38,7 @@ int ostatni_kierunek = 0;
 unsigned long poprzedni_czas = 0; 
 int korekta = 0;                  
 
-// jacob - wydaje mi sie ze taki jest odpowieni w razie czego zmniejszyc do 800
+// Próg lini
 // 850 - działa ok
 // 800 - super
 const int PROG_LINII = 800; // Czarna linia = niski odczyt (<400), białe tło = wysoki (>400)
@@ -57,14 +54,8 @@ void setup() {
 void loop() {
   int pozycja = oblicz_pozycje();
 
-  // if (pozycja == 10000) {
-  //   szukaj_linii();
-  //   return;
-  // }
-
   blad = pozycja;
-  // test start
-  // Pobieramy aktualny czas w milisekundach
+
   unsigned long aktualny_czas = millis();
 
   // Liczymy PID tylko jeśli minęło 5 milisekund (czyli 200 razy na sekundę)
@@ -77,26 +68,19 @@ void loop() {
       korekta = (Kp * blad) + (Ki * calka) + (Kd * rozniczka);
       
       poprzedni_blad = blad;
-      poprzedni_czas = aktualny_czas; // Zapisujemy czas do następnego sprawdzenia
+      poprzedni_czas = aktualny_czas;
   }
-  // test end
 
-  // === NOWY MODUŁ DYNAMICZNEJ PRĘDKOŚCI ===
-  // Twój współczynnik hamowania. 
-  // 0.0 = wyłączone, robot jedzie ciągle 250
-  // 0.5 = średnie hamowanie
-  // 1.0 = ostre hamowanie przed każdym łukiem
-
+  // === MODUŁ DYNAMICZNEJ PRĘDKOŚCI ===
+  // współczynnik hamowania. 
   // 0.3 - ok ale troche przesadza
-  // 0.4 - to powinna byc idealna, testuje
+  // 0.4 - to powinna byc idealna
   // 0.5 - jest super
   float wspolczynnik = 0.4; 
   
   // Odejmujemy część korekty od prędkości maksymalnej.
-  // Używamy abs(korekta), bo chcemy zwalniać niezależnie czy skręcamy w lewo czy w prawo.
   int aktualne_v = V_BAZA - (abs(korekta) * wspolczynnik);
 
-  // Zabezpieczenie krytyczne! 
   // Nie pozwalamy, aby na ekstremalnie ostrym zakręcie baza spadła poniżej pewnego progu (np. 80), 
   // bo robot całkowicie by się zatrzymał.
   if (aktualne_v < 80) {
@@ -123,7 +107,6 @@ int oblicz_pozycje() {
     }
   }
 
-  // if (aktywnych == 0) return 10000;
   if (aktywnych == 0) {
     // Zamiast zwracać 10000, dajemy maksymalny możliwy błąd z "plusem" lub "minusem",
     // aby PID sam agresywnie, ale płynnie skręcił i użył dynamicznego hamowania.
@@ -133,11 +116,6 @@ int oblicz_pozycje() {
 
   int pozycja = suma_wag / aktywnych;
 
-// old
-  // if (pozycja < 0) ostatni_kierunek = -1;
-  // else if (pozycja > 0) ostatni_kierunek = 1;
-
-// new
   // Zapisujemy kierunek TYLKO jeśli linia jest wyraźnie po jednej ze stron.
   // Ignorujemy małe wahania wokół zera (środka).
   if (pozycja < -500) {
@@ -149,11 +127,6 @@ int oblicz_pozycje() {
 
   return pozycja;
 }
-
-// void szukaj_linii() {
-//   if (ostatni_kierunek == -1) move(-80, 80); 
-//   else move(80, -80);
-// }
 
 void move(int ml, int mp) {
   ml = constrain(ml, -255, 255);
